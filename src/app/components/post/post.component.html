@@ -1,0 +1,3 @@
+<div *ngFor="let post of posts">
+<app-postdetail [post]="post" (onDelete)="deletePost(post)"></app-postdetail>
+</div>

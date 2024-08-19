@@ -1,0 +1,13 @@
+<h1>home works!</h1>
+
+<button (click)="goTo()">Go To Lead Inbox</button>
+
+<ul style="list-style: none;">
+    <li style="list-style: none;">
+      <a routerLinkActive="active" [routerLink]="['dashboard']" >Dashboard</a></li>
+    <li style="list-style: none;">
+      <a routerLinkActive="active" [routerLink]="['reports']" >Reports</a></li>
+  </ul>
+  <button (click)="goTo()">GoTo Reports</button>
+
+<router-outlet />

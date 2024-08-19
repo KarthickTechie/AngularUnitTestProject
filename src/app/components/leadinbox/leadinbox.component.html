@@ -1,0 +1,11 @@
+<p>leadinbox works!</p>
+<h4>Total Leads - {{totalleads}}</h4>
+<p>Status : {{route.snapshot.paramMap.get('status')}}</p>
+
+<ul >
+    @for(lead of leads;track lead){
+        <li>
+            <a [routerLink]="['/leadinbox',lead.id]"><pre>{{lead.id}}</pre>
+            Name : {{lead.name}}</a></li>
+    }
+</ul>

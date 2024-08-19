@@ -1,0 +1,64 @@
+
+<div class="grid-container">
+
+<div class="flex-y">
+    <div>
+        <h3>Sign Up - Reactive Form</h3>
+    </div>
+    <div class="flex-y">
+        <form [formGroup]="signupForm" (ngSubmit)="save()">
+            <div class="flex-y">
+                <input type="text" formControlName="username" placeholder="Enter Username">
+                <div *ngIf="signupForm.invalid && (signupForm.touched && signupForm.dirty)">
+                    <span class="error-style" *ngIf="username?.errors?.['required']">Username is required</span>
+                    <span class="error-style" *ngIf="username?.errors?.['forbidden']">
+                        Username Bob is restricted</span>
+                    <span class="error-style" *ngIf="username?.errors?.['minlength']">Username must have atleast 4 characters</span>
+                </div>
+                <input type="password" formControlName="password" placeholder="Enter password" />
+            </div>
+            <div class="flex-y" formGroupName="address">
+                <select formControlName="state">
+                    @for(car of cars;track $index){
+                        <option [value]="car.id">{{car.value}}</option>
+                    }
+                    </select>
+                <input type="text" formControlName="city" placeholder="Enter City">
+                <input type="text" formControlName="pincode" placeholder="Enter Pincode">
+            </div>
+            <div class="flex-y" formArrayName="aliases">
+               <h2>Aliases</h2>
+               <button (click)="addControl()">Add Form Control + </button>
+               @for(alias of aliases.controls;track alias;let i = $index){
+                  <label for="alias{{i}}">Alias {{i}}</label>
+                  <input type="text" id="alias-{{i}}" [formControlName]="i">
+               }
+            </div>
+            <input type="submit" name="save" [disabled]="signupForm.invalid">
+            <button (click)="updateForm()">Update</button>
+<button (click)="addControl()">Add +</button>
+        </form>
+    </div>
+</div>
+
+<div class="flex-y">
+
+<select name="cars" id="cars" [(ngModel)]="selectedCar"  (change)="carChanged()">
+        @for(car of cars;track $index){
+            <option value="{{car.id}}" #opt >{{car.value}}</option>
+        }
+</select>
+
+    <!-- <h3>Template Driven Form Example</h3>
+
+    <hr/>
+    <label for="companyName">Company Name :</label>
+    <input type="text" id="companyName" name="companyname" [(ngModel)]="companyname"
+    required minlength="10" #companyName="ngModel">
+    <div *ngIf="companyName.invalid && (companyName.touched || companyName.dirty)">
+         <span *ngIf="companyName.errors?.['required']" class="error-style">Company Name is Required</span>
+         <span class="error-style" *ngIf="companyName.errors?.['minlength']">Company Name must be atleast 10 character length</span>
+    </div> -->
+</div>
+
+</div>

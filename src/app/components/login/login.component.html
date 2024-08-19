@@ -1,0 +1,92 @@
+<div class="grid-container">
+    <!-- 
+    reactive form 
+    template driven form 
+
+ -->
+    <div>
+        <h3>Form Control Example </h3>
+        <form>
+
+            <input type="text" placeholder="Enter Username" id="loginform" [formControl]="username" />
+            <div id="error-container" *ngIf="username.invalid && (username.dirty || username.touched)">
+                <p class="error-style" *ngIf="username.errors?.['required']">Username is required</p>
+                <p class="error-style" *ngIf="username.errors?.['minlength']">Username should be atleast 5 character</p>
+                <p class="error-style" *ngIf="username.errors?.['maxlength']">Username should not be more than 12
+                    characters</p>
+                <p class="error-style" *ngIf="username.errors?.['forbidden']">Username Should not contain word 'admin'
+                    strictly</p>
+            </div>
+
+
+
+            <div>
+                <p>pristine : {{username.pristine}}</p>
+                <p>dirty : {{username.dirty}}</p>
+                <p>touched : {{username.touched}}</p>
+                <p>Valid : {{username.valid}}</p>
+                <p>Invalid : {{username.invalid}}</p>
+                <p>ForbiddenAdmin : {{username.errors | json}}</p>
+                <p>Required : {{username.errors?.['required']}}</p>
+            </div>
+            <input type="submit" name="Login">
+
+        </form>
+
+    </div>
+    <div class="flex-y">
+        <h3>Form Group Example</h3>
+        <form class="flex-y" [formGroup]="signupFormGroup" (ngSubmit)="save()">
+            <input type="text" placeholder="USERNAME" formControlName="name">
+            <span id="error-container"
+                *ngIf="signupFormGroup.invalid && (signupFormGroup.dirty || signupFormGroup.touched)">
+                <p class="error-style" *ngIf="name.errors?.['required']">
+                    Username is required</p>
+
+            </span>
+
+            <input type="password" placeholder="password" formControlName="password">
+            <span id="error-container"
+                *ngIf="signupFormGroup.invalid && (signupFormGroup.dirty || signupFormGroup.touched)">
+                <p class="error-style" *ngIf="password.errors?.['required']">
+                    password is required</p>
+
+                <p class="error-style" *ngIf="password.errors?.['minlength']">
+                    password should be atleast 8 character</p>
+            </span>
+            <input type="email" placeholder="email" formControlName="email">
+            <input type="tel" placeholder="phone number" formControlName="phone">
+            <input type="submit" name="submit">
+        </form>
+        <div>
+            <p>{{signupFormGroup.value | json}}</p>
+            <p>{{signupFormGroup.valid}}</p>
+            <button (click)="update()">update</button>
+
+        </div>
+        <form>
+            <input type="text" placeholder="Customer Name" name="customerName" [(ngModel)]="customerName"
+                #customername="ngModel">
+            <button (click)="saveCustomer()">Save Customer</button>
+            <div>
+                <p>Customer Name Pristine : {{customername.pristine}}
+                    </p>
+                    <p>Customer Name valid : {{customername.valid}}
+                    </p>
+
+            </div>
+        </form>
+    </div>
+
+
+    <ul>
+        @for(s of signupFormArray;track s;let i = $index){
+            <li>
+                <span>{{i+1}}</span><a>{{s.value.name}}</a>
+            </li>
+        }
+        <li></li>
+    </ul>
+
+
+</div>

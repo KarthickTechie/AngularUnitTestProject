@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    font-family: 'Roboto';
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.active{
+    font-size: large;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-x{
+    @extend .flex-container;
+    flex-flow: row nowrap;
+}
+.flex-y{
+    @extend .flex-container;
+    flex-flow: column nowrap;
+}
+
+.error-style{
+    color: red;
+}
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 50px;
+    text-align: center;
+}
+
