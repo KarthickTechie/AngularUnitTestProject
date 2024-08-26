@@ -1,0 +1,20 @@
+.optionscontainer{
+display: flex;
+flex-flow: row wrap;
+margin: 1rem;
+padding: 0.5rem;
+
+}
+
+.menu-container{
+
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0.25rem;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    height: 30px;
+    padding: 0 0.5rem;
+    box-shadow: 0px 0px 0.5px 0.5px #d4d4d4;
+}

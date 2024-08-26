@@ -36,10 +36,10 @@ export class CalculatorService {
   }
 
   addIdProp(val:User,id:number){
-    const x:any = val
-    x.id = id
-    return x
-    // return {...val,id} 
+    // const x:any = val
+    // x.id = id
+    // return x
+     return {...val,id} 
   }
 
 

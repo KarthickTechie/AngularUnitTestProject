@@ -6,6 +6,7 @@ import { TaskService } from '../../services/tasks/task.service';
 import { Todo } from '../../models/Todos';
 import { LoggerService } from '../../services/logger/logger.service';
 import { TaskComponent } from '../task/task.component';
+import { MoreoptionsComponent } from '../moreoptions/moreoptions.component';
 
 @Component({
   selector: 'app-tasks',
@@ -16,7 +17,7 @@ import { TaskComponent } from '../task/task.component';
 })
 export class TasksComponent {
 
-
+  
   tasksList$!:Observable<Todo[]>;
   constructor(private taskService:TaskService,private loggerService:LoggerService){
   }
@@ -35,10 +36,11 @@ export class TasksComponent {
 
   loadData(){
    this.loggerService.log('todo service called')
+
    this.tasksList$ = this.taskService.fetchData().pipe(
     catchError(err=>{
     this.handleError(err)
-    return of([])
+    return of([]) 
   }))
   }
 

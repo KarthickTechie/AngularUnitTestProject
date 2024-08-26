@@ -34,7 +34,7 @@ import { LoggerService } from '../logger/logger.service';
 
 
 
-fdescribe('CalculatorServiceTest2',()=>{
+describe('CalculatorServiceTest2',()=>{
   let calcService:CalculatorService;
   let user2:User;
 

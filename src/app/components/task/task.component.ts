@@ -10,6 +10,7 @@ import { Todo } from '../../models/Todos';
 })
 export class TaskComponent {
   @Input() todo!:Todo;
+  @Input()index!:number;
   @Output() onDeleteTask = new EventEmitter<Todo>();
 
   deletetask(todo:Todo){

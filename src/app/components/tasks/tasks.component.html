@@ -1,11 +1,13 @@
+<div >
+<button style="margin-left: 1em;" class="btn btn-sm btn-primary" (click)="loadData()">Load Data</button>
+</div>
 
-<button class="btn btn-sm btn-primary" (click)="loadData()">Load Data</button>
 
 @if(tasksList$ | async; as tasks){
     <ul>
 
-        @for(task of tasks;track task){
-            <app-task  [todo]="task" (onDeleteTask)="deleteTask($event)"></app-task>
+        @for(task of tasks;track task;let i = $index;){
+            <app-task [index]="i" [todo]="task" (onDeleteTask)="deleteTask($event)"></app-task>
         }@empty {
             <li>
                 <a>No Data Found</a>
