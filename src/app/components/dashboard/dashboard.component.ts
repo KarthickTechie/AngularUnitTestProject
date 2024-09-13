@@ -18,21 +18,22 @@ export class DashboardComponent implements OnInit,AfterViewInit{
   private containerEl!: ElementRef<HTMLElement>;
 
   chartType = ChartType.ColumnChart
-  chartTitle = `World's Population`
+
+  initianSearchIndex = 0
+  myColumns = [ChartConfiguration.SearchCriterias[this.initianSearchIndex], 'Leads Count',{role:'style'}]
+
   chartOptions = {
-    title: 'Population of Largest U.S. Cities',
+    title: `Lead Summary of ${ChartConfiguration.SearchCriterias[this.initianSearchIndex]}`,
     chartArea: {width: '50%'},
     hAxis: {
-      title: 'Total Population',
+      title: `${ChartConfiguration.SearchCriterias[this.initianSearchIndex]}`,
       minValue: 0
     },
     vAxis: {
-      title: 'City'
+      title: 'Quantity'
     }
   };
   myData!:Row[] 
-  initianSearchIndex = 0
-  myColumns = [ChartConfiguration.SearchCriterias[this.initianSearchIndex], 'Leads Count',{role:'style'}]
   taskservice = inject(TaskService)
   chartData$  = this.taskservice.fetchChartsData('zone',true)
   constructor(private loaderService: ScriptLoaderService){  
@@ -63,6 +64,13 @@ export class DashboardComponent implements OnInit,AfterViewInit{
     if(this.initianSearchIndex < ChartConfiguration.SearchCriterias.length){
       this.chartData$ =  this.taskservice.fetchChartsData(
         ChartConfiguration.SearchCriterias[this.initianSearchIndex],true)
+
+        this.chartOptions = {...this.chartOptions,
+          title:`Lead Summary of ${ChartConfiguration.SearchCriterias[this.initianSearchIndex]}`,
+          hAxis: {
+            title: `${ChartConfiguration.SearchCriterias[this.initianSearchIndex]}`,
+            minValue: 0
+          }}
     }
     
     
