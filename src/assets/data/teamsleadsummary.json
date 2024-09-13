@@ -1,0 +1,35 @@
+{
+    "data":[
+            {
+                "name":"Retail",
+                "value":2345,
+                "id":1,
+                "parentId":1
+            },
+            {
+                "name":"Agri",
+                "value":4245,
+                "id":2,
+                "parentId":1
+            },
+            {
+                "name":"MSME",
+                "value":12098,
+                "id":3,
+                "parentId":1
+            },
+            {
+                "name":"HL",
+                "value":4567,
+                "id":4,
+                "parentId":1
+            },
+            {
+                "name":"Corporate",
+                "value":9876,
+                "id":5,
+                "parentId":1
+            }
+
+        ]
+    }

@@ -6,6 +6,7 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { logInterceptor } from './interceptors/log.interceptor';
 
 export const appConfig: ApplicationConfig = {
+
   providers: [provideRouter(routes,withComponentInputBinding(),withRouterConfig({
     paramsInheritanceStrategy:'always'
   })),

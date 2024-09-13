@@ -1,8 +1,29 @@
-<p>dashboard works!</p>
-<google-chart
-[type]="chartType"
-[data]="myData"
-[title]="'World Population'"
+<h3>dashboard works!</h3>
+<div class="dashboard-container">
+    <div class="dashboard-container-controls">
+        <button class="btn btn-sm btn-secondary" 
+        (click)="onClickPrevious()">Previous</button>
+        <button class="btn btn-sm btn-secondary"
+        (click)="onClickNext()">Next</button>
 
-></google-chart>
+    </div>
+
+    @if( chartData$ | async; as myData ){
+        <google-chart
+
+        style="width: 75vw;height: 30vh;"
+        [type]="chartType"
+        [data]="myData"
+        [title]="chartTitle"
+        [columns]="myColumns"
+        [options]="chartOptions"
+        (select)="onSelectChart($event)"
+        ></google-chart>
+    }@else{
+        <div> No  Data </div>
+    }
+    
+    <div id="container" #container style="width: 75vw;height: 30vh;"></div>
+</div>
+
 

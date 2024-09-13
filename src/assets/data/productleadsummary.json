@@ -1,0 +1,35 @@
+{
+    "data":[
+            {
+                "name":"Car Loan",
+                "value":2345,
+                "id":1,
+                "parentId":1
+            },
+            {
+                "name":"Bike Loan",
+                "value":4245,
+                "id":2,
+                "parentId":1
+            },
+            {
+                "name":"Term Loan",
+                "value":12098,
+                "id":3,
+                "parentId":1
+            },
+            {
+                "name":"Personal Loan",
+                "value":4567,
+                "id":4,
+                "parentId":1
+            },
+            {
+                "name":"Credit Card Loan",
+                "value":9876,
+                "id":5,
+                "parentId":1
+            }
+
+        ]
+    }

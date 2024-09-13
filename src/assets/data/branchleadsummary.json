@@ -1,0 +1,35 @@
+{
+    "data":[
+            {
+                "name":"TNagar",
+                "value":2345,
+                "id":1,
+                "parentId":1
+            },
+            {
+                "name":"Tamabaram",
+                "value":4245,
+                "id":2,
+                "parentId":1
+            },
+            {
+                "name":"Chrompet",
+                "value":12098,
+                "id":3,
+                "parentId":1
+            },
+            {
+                "name":"Poonmale",
+                "value":4567,
+                "id":4,
+                "parentId":1
+            },
+            {
+                "name":"Velachery",
+                "value":9876,
+                "id":5,
+                "parentId":1
+            }
+
+        ]
+    }

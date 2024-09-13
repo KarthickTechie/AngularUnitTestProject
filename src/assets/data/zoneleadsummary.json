@@ -1,0 +1,35 @@
+{
+    "data":[
+            {
+                "name":"Chennai",
+                "value":2345,
+                "id":1,
+                "parentId":1
+            },
+            {
+                "name":"Coimbatore",
+                "value":4245,
+                "id":2,
+                "parentId":1
+            },
+            {
+                "name":"Madurai",
+                "value":1209,
+                "id":3,
+                "parentId":1
+            },
+            {
+                "name":"Trichy",
+                "value":4567,
+                "id":4,
+                "parentId":1
+            },
+            {
+                "name":"Tutukudi",
+                "value":9876,
+                "id":5,
+                "parentId":1
+            }
+
+        ]
+    }
