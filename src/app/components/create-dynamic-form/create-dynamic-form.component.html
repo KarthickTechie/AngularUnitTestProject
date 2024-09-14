@@ -1,0 +1,28 @@
+<div>
+  @if(dynamicForm.value.length != 0){
+  <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit(dynamicForm.value)">
+    <div class="row">
+      @for(field of dynamicFormFieldData; let i =$index; track i) {
+      <div class="form-group col-md-3">
+        <label>{{ field.lable }}</label>
+        <select
+          class="form-control"
+          formControlName="{{ field.formControlKey }}"
+          id="{{ field.formControlKey }}"
+          (change)="seletedValue($event)"
+        >
+          <option selected>Choose...</option>
+          @if(field.lovDataList && field.lovDataList.length > 0){ @for(item of
+          field.lovDataList; track item){
+          <option [value]="item.optCode">{{ item.optDesc }}</option>
+          } }
+        </select>
+      </div>
+      }
+      <div class="col-md-12 text-center">
+        <button class="btn btn-sm btn-primary mt-4">Submit</button>
+      </div>
+    </div>
+  </form>
+  }
+</div>
