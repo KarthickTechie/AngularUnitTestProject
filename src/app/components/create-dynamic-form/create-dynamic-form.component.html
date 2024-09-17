@@ -4,17 +4,17 @@
     <div class="row">
       @for(field of dynamicFormFieldData; let i =$index; track i) {
       <div class="form-group col-md-3">
-        <label>{{ field.lable }}</label>
+        <!-- <label>{{ field.lable }}</label> -->
         <select
-          class="form-control"
-          formControlName="{{ field.formControlKey }}"
+          class="form-control m-1"
+          formControlName="{{ field.formControlKey }} -------"
           id="{{ field.formControlKey }}"
           (change)="seletedValue($event)"
         >
-          <option selected>Choose...</option>
+          <option selected>Select {{field.formControlKey}}</option>
           @if(field.lovDataList && field.lovDataList.length > 0){ @for(item of
           field.lovDataList; track item){
-          <option [value]="item.optCode">{{ item.optDesc }}</option>
+          <option [value]="item.value">{{ item.name }}</option>
           } }
         </select>
       </div>
@@ -26,3 +26,28 @@
   </form>
   }
 </div>
+
+<!--
+<ngx-super-dashboard
+[templateSetting] 
+[searchCriteriaObject] = "searchCriteriaObj" // configure the dropdown 
+
+(onSelectDropdown) = "Selected($event)" // {label:'',data:{name,value}}:DropDownSelectedData
+(onSubmitSearch) = "Search($event)" // DropDownSelectedData[]
+[chartConfigurationData] = "chartConfigurationData" 
+[cardsConfigData] 
+>
+
+
+
+</ngx-super-dashboard>
+
+export interface ChartConfigurationData {
+
+  styleObject : any;
+  type:string; 
+
+
+}
+
+-->

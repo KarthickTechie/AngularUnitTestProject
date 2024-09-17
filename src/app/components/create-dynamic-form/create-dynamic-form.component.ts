@@ -30,7 +30,7 @@ import { MapDataToDynamicFieldService } from "../../services/dynamicForm/map-dat
 })
 export class CreateDynamicFormComponent implements OnInit {
   dynamicForm!: FormGroup;
-  @Input()
+  @Input({required:true})
   dynamicFormFieldData!: DynamicFieldsData[];
 
   @Output() selectedField = new EventEmitter<SelectedFieldValueEmit>();

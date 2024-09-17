@@ -3,21 +3,23 @@ import {GoogleChartsModule , ChartType, ChartSelectionChangedEvent, getPackageFo
 import { TaskService } from '../../services/tasks/task.service';
 import { CommonModule } from '@angular/common';
 import { ChartConfiguration } from '../../Utils/ChartConfiguration';
+import { CreateDynamicFormComponent } from '../create-dynamic-form/create-dynamic-form.component';
+import { DynamicFieldsConfiguration, DynamicFieldsData } from '../../Utils/DynamicFieldsConfiguration';
 declare const google:any;
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule,GoogleChartsModule],
+  imports: [CommonModule,GoogleChartsModule,CreateDynamicFormComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements OnInit,AfterViewInit{
-  private readonly chartPackage = getPackageForChart(ChartType.BarChart);
-  @ViewChild('container', { read: ElementRef })
-  private containerEl!: ElementRef<HTMLElement>;
 
+  searchFormFields : DynamicFieldsData[]= DynamicFieldsConfiguration
   chartType = ChartType.ColumnChart
+  sm1_ChartType = ChartType.PieChart
+  sm2_ChartType = ChartType.BarChart
 
   initianSearchIndex = 0
   myColumns = [ChartConfiguration.SearchCriterias[this.initianSearchIndex], 'Leads Count',{role:'style'}]
@@ -50,14 +52,6 @@ export class DashboardComponent implements OnInit,AfterViewInit{
    
   }
 
-
-  drawBasic(){
-   
-    const data = google.visualization.arrayToDataTable();
-    const chart = new google.visualization.BarChart(this.containerEl.nativeElement);
-
-    chart.draw(data, this.chartOptions);
-  }
 
   onSelectChart(e:ChartSelectionChangedEvent){
     this.initianSearchIndex+=1

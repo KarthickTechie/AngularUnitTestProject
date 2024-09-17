@@ -1,17 +1,50 @@
-<h3>dashboard works!</h3>
 <div class="dashboard-container">
-    <div class="dashboard-container-controls">
-        <button class="btn btn-sm btn-secondary" 
-        >Previous</button>
-        <button class="btn btn-sm btn-secondary"
-        >Next</button>
 
+    <!-- grid area for search criteria settings  -->
+   <div class="grid-area-search">
+    <app-create-dynamic-form
+    [dynamicFormFieldData] = "searchFormFields"
+    ></app-create-dynamic-form>
+   </div>
+
+   <div class="grid-area-chartsm">
+    <div class="card" style="height: 28vh;">
+        @if( chartData$ | async; as myData ){
+            <google-chart
+            style=""
+            [type]="sm1_ChartType"
+            [data]="myData"
+            [columns]="myColumns"
+            [options]="chartOptions"
+            (select)="onSelectChart($event)"
+            ></google-chart>
+        }@else{
+            <div> No  Data </div>
+        }
+       
     </div>
+    <div class="card" style="height: 30vh;">
+        @if( chartData$ | async; as myData ){
+            <google-chart
+
+            [type]="sm2_ChartType"
+            [data]="myData"
+            [columns]="myColumns"
+            [options]="chartOptions"
+            (select)="onSelectChart($event)"
+            ></google-chart>
+        }@else{
+            <div> No  Data </div>
+        }
+       
+    </div>
+   </div>
+   <div class="grid-area-chartlg">
 
     @if( chartData$ | async; as myData ){
         <google-chart
-
-        style="width: 75vw;height: 30vh;"
+        
+        style="width: 55vw;height: 55vh;"
         [type]="chartType"
         [data]="myData"
         [columns]="myColumns"
@@ -21,8 +54,28 @@
     }@else{
         <div> No  Data </div>
     }
-    
-    <div id="container" #container style="width: 75vw;height: 30vh;"></div>
+   
+   </div>
+
+   <div class="grid-area-card">
+
+    <div class="card">
+        <p>Zone</p>
+        <h3>991</h3>
+        <p>Leads</p>
+    </div>
+    <div class="card">
+        <p>Total Sanction</p>
+        <h3>443</h3>
+    </div>
+    <div class="card">
+        <p>Total Sanction</p>
+        <h3>443</h3>
+    </div>
+
+   </div>
+
 </div>
+
 
 

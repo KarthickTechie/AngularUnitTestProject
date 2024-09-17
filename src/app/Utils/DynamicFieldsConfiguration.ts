@@ -1,13 +1,14 @@
 export const DynamicFieldsConfiguration: DynamicFieldsData[] = [
-  { lable: "Zonal", formControlKey: "zonal", lovDataList: [] },
+  { lable: "Zone", formControlKey: "zone", lovDataList: [] },
+  { lable: "Branch", formControlKey: "branch", lovDataList: [] },
   { lable: "Teams", formControlKey: "teams", lovDataList: [] },
   { lable: "Team Members", formControlKey: "teamMembers", lovDataList: [] },
-  { lable: "Branch", formControlKey: "branch", lovDataList: [] },
+ 
 ];
 
 export interface AppLOVData {
-  optCode: string | number;
-  optDesc: string;
+  name: string | number;
+  value: string | number;
 }
 
 export interface DynamicFieldsData {

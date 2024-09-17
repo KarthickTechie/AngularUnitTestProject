@@ -11,7 +11,7 @@ import { NgFor } from '@angular/common';
 })
 export class PostdetailComponent {
 
-  @Input()post!:Post;
+  @Input({required:true})post!:Post;
   @Output()onDelete = new EventEmitter<Post>()
 
   delete(post:Post){
