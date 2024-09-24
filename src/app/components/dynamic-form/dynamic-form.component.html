@@ -1,0 +1,107 @@
+<div class="fields-bar">
+  <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit(dynamicForm.value)">
+    <div class="grid-label-bar">
+      @if(dynamicForm.value.length != 0){ @for(field of dynamicFormFieldData;
+      let i =$index; track i) { @if(field.lovDataList &&
+      field.lovDataList.length > 0){
+
+      <div class="list">
+        <div class="lable">{{ field.lable }}<span>-</span></div>
+
+        <select
+          formControlName="{{ field.formControlKey }}"
+          id="{{ field.formControlKey }}"
+          (change)="seletedValue($event)"
+          placeholder="Select"
+        >
+          <option selected value="">Select</option>
+          @for(item of field.lovDataList; track item){
+          <option [value]="item.value">{{ item.name }}</option>
+          }
+        </select>
+        <!-- <div class="dropdown">
+        <button class="dropbtn"> Select</button>
+        <div class="dropdown-content">
+          <div href="#">1</div>
+        </div>
+      </div> -->
+      </div>
+      }@else{
+      <div class="list">
+        <div class="lable">{{ field.lable }}<span>-</span></div>
+        <input
+          type="{{ field.type }}"
+          class="picker"
+          formControlName="{{ field.formControlKey }}"
+          id="{{ field.formControlKey }}"
+          (change)="seletedValue($event)"
+          placeholder="Select"
+        />
+      </div>
+      }
+      <!-- <div class="list">
+    <div class="lable">Regions <span>-</span></div>
+    <div class="dropdown">
+      <button class="dropbtn">Select</button>
+      <div class="dropdown-content">
+        <div href="#">Link 1</div>
+        <div href="#">Link 2</div>
+        <div href="#">Link 3</div>
+      </div>
+    </div>
+  </div>
+  <div class="list">
+    <div class="lable">Branch <span>-</span></div>
+    <div class="dropdown">
+      <button class="dropbtn">Select</button>
+      <div class="dropdown-content">
+        <div href="#">Link 1</div>
+        <div href="#">Link 2</div>
+        <div href="#">Link 3</div>
+      </div>
+    </div>
+  </div>
+  <div class="list">
+    <div class="lable">Product <span>-</span></div>
+    <div class="dropdown">
+      <button class="dropbtn">Select</button>
+      <div class="dropdown-content">
+        <div href="#">Link 1</div>
+        <div href="#">Link 2</div>
+        <div href="#">Link 3</div>
+      </div>
+    </div>
+  </div>
+  <div class="list">
+    <div class="lable">Start Date <span>-</span></div>
+    <div class="dropdown">
+      <button class="dropbtn">Select</button>
+      <div class="dropdown-content">
+        <div href="#">Link 1</div>
+        <div href="#">Link 2</div>
+        <div href="#">Link 3</div>
+      </div>
+    </div>
+  </div>
+  <div class="list">
+    <div class="lable">End Date <span>-</span></div>
+    <div class="dropdown">
+      <button class="dropbtn">Select</button>
+      <div class="dropdown-content">
+        <div href="#">Link 1</div>
+        <div href="#">Link 2</div>
+        <div href="#">Link 3</div>
+      </div>
+    </div>
+  </div> -->
+      } }
+
+      <div class="list lastList">
+        <div class="lable">
+          *Accounts in Actuals <br />
+          *Ammount in Lakhs
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+<google-chart
+  style="width: 100%; height: 100%"
+  [type]="chartType"
+  [data]="chartData"
+  [columns]="chartOptionData.myColumns"
+  [options]="chartOptionData.chartOptions"
+  (select)="onSelectChart($event, chartType)"
+></google-chart>

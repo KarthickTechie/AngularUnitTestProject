@@ -1,81 +1,83 @@
+<div class="template-box">
+  <select
+    class="form-ctrl"
+    placeholder="Select Template"
+    (change)="selectTemplate($event)"
+  >
+    <option value="select" selected>Select Template</option>
+    @if(templateList && templateList.length > 0){ @for(temp of templateList;
+    track temp){
+    <option [value]="temp.value">{{ temp.name }}</option>
+    }}
+  </select>
+</div>
+
 <div class="dashboard-container">
-
-    <!-- grid area for search criteria settings  -->
-   <div class="grid-area-search">
+  <div [ngClass]="seletedTemp + ' grid-area-search'">
     <app-create-dynamic-form
-    [dynamicFormFieldData] = "searchFormFields"
+      [dynamicFormFieldData]="searchFormFields"
+      (selectedField)="seletedValue($event)"
+      (onSubmitForm)="submitFormData($event)"
     ></app-create-dynamic-form>
-   </div>
+  </div>
 
-   <div class="grid-area-chartsm">
-    <div class="card" style="height: 28vh;">
-        @if( chartData$ | async; as myData ){
-            <google-chart
-            style=""
-            [type]="sm1_ChartType"
-            [data]="myData"
-            [columns]="myColumns"
-            [options]="chartOptions"
-            (select)="onSelectChart($event)"
-            ></google-chart>
-        }@else{
-            <div> No  Data </div>
-        }
-       
+  <div [ngClass]="seletedTemp + ' grid-area-card'">
+    <div class="card">
+      <p>Zone</p>
+      <h3>991</h3>
+      <p>Leads</p>
     </div>
-    <div class="card" style="height: 30vh;">
-        @if( chartData$ | async; as myData ){
-            <google-chart
-
-            [type]="sm2_ChartType"
-            [data]="myData"
-            [columns]="myColumns"
-            [options]="chartOptions"
-            (select)="onSelectChart($event)"
-            ></google-chart>
-        }@else{
-            <div> No  Data </div>
-        }
-       
+    <div class="card">
+      <p>Total Sanction</p>
+      <h3>443</h3>
     </div>
-   </div>
-   <div class="grid-area-chartlg">
+    <div class="card">
+      <p>Total Sanction</p>
+      <h3>443</h3>
+    </div>
+  </div>
 
+  <div [ngClass]="seletedTemp + ' grid-area-chartlg'">
     @if( chartData$ | async; as myData ){
-        <google-chart
-        
-        style="width: 55vw;height: 55vh;"
-        [type]="chartType"
+    <google-chart
+      style="width: 55vw; height: 55vh"
+      [type]="chartType"
+      [data]="myData"
+      [columns]="myColumns"
+      [options]="chartOptions"
+      (select)="onSelectChart($event)"
+    ></google-chart>
+    }@else{
+    <div>No Data</div>
+    }
+  </div>
+
+  <div [ngClass]="seletedTemp + ' grid-area-chartsm'">
+    <div class="card" style="height: 28vh">
+      @if( chartData$ | async; as myData ){
+      <google-chart
+        [type]="sm1_ChartType"
         [data]="myData"
         [columns]="myColumns"
         [options]="chartOptions"
         (select)="onSelectChart($event)"
-        ></google-chart>
-    }@else{
-        <div> No  Data </div>
-    }
-   
-   </div>
-
-   <div class="grid-area-card">
-
-    <div class="card">
-        <p>Zone</p>
-        <h3>991</h3>
-        <p>Leads</p>
+      ></google-chart>
+      }@else{
+      <div>No Data</div>
+      }
     </div>
-    <div class="card">
-        <p>Total Sanction</p>
-        <h3>443</h3>
+    <div class="card" style="height: 30vh">
+      @if( chartData$ | async; as myData ){
+      <google-chart
+        [type]="sm2_ChartType"
+        [data]="myData"
+        [columns]="myColumns"
+        [options]="chartOptions"
+        (select)="onSelectChart($event)"
+      ></google-chart>
+      }@else{
+      <div>No Data</div>
+      }
     </div>
-    <div class="card">
-        <p>Total Sanction</p>
-        <h3>443</h3>
-    </div>
-
-   </div>
-
+  </div>
 </div>
-
-
-

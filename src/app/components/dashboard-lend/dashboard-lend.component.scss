@@ -1,0 +1,157 @@
+.content-area {
+  width: 100%;
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-template-rows: auto auto auto;
+  gap: 12px;
+  background-color: #e0e0e0;
+  padding: 7px;
+}
+
+.card {
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  margin: 5px 0 12px 0;
+  text-align: center;
+  background-color: #fff;
+  width: 18vw; //18vw;
+  border-radius: 3px;
+  border: none;
+  // height: 20vh;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .card-header {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    background: none;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .card-content {
+    padding: 14px;
+  }
+  h3 {
+    font-size: 15px;
+    margin: 0;
+  }
+  p {
+    font-weight: 600;
+    font-size: 15px;
+    color: #853163;
+  }
+}
+
+.grid-area-countCards {
+  grid-area: 1/1/2/2;
+  .card-content.chart {
+    height: 31.5vh;
+  }
+}
+
+.grid-area-chart {
+  grid-area: 1/2/3/4;
+  .card {
+    // overflow: auto;
+    width: 40vw;
+    height: 39.5vh;
+    padding-bottom: 8px;
+  }
+  app-ng-charts {
+    height: 100%;
+  }
+}
+
+.grid-area-tableRecords {
+  // display: none;
+  grid-area: 1/4/3/-1;
+  .card {
+    overflow: auto;
+    width: 100%; //38vw;
+    height: 100%;
+  }
+  .card-content {
+    padding: 12px 10px;
+  }
+}
+
+.grid-table {
+  font-weight: 400;
+  font-size: 12px;
+  border-collapse: collapse;
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  border: 1px solid #ddd;
+}
+
+.grid-table tr,
+.grid-table th {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+}
+.grid-table .colspan tr:last-child {
+  border: none;
+}
+.colspan td {
+  width: 20%;
+  padding: 8px;
+}
+
+.grid-table td:nth-child(1),
+.grid-table th:nth-child(1) {
+  border-right: 1px solid #f2f2f2;
+}
+
+.grid-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+@media (max-width: 850px) {
+  .grid-container {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 580px) {
+  .card-header {
+    font-size: 14px;
+  }
+  .grid-container {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 0px;
+  }
+  .grid-area-tableRecords {
+    grid-area: auto;
+    .card {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .grid-area-chart {
+    grid-area: auto;
+    .card {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .grid-area-countCards {
+    grid-area: auto;
+    .card {
+      width: 100%;
+      height: auto;
+    }
+    .card-content.chart {
+      height: auto;
+    }
+  }
+}
