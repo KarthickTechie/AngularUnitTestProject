@@ -28,8 +28,8 @@ export class MapDataToDynamicFieldService {
           ) => {
             setOptions.fetchLovData[i] = {
               ...item,
-              optCode: item[`${setOptions.optCode}`],
-              optDesc: item[`${setOptions.optDesc}`],
+              value: item[`${setOptions.value}`],
+              name: item[`${setOptions.name}`],
             };
             if (i == setOptions.fetchLovData.length - 1) {
               return resolve(setOptions.fetchLovData);

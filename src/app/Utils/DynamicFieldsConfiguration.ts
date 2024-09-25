@@ -2,8 +2,9 @@ export const DynamicFieldsConfiguration: DynamicFieldsData[] = [
   { lable: "Zone", formControlKey: "zone", lovDataList: [] },
   { lable: "Branch", formControlKey: "branch", lovDataList: [] },
   { lable: "Teams", formControlKey: "teams", lovDataList: [] },
-  { lable: "Team Members", formControlKey: "teamMembers", lovDataList: [] },
- 
+  { lable: "Product", formControlKey: "product", lovDataList: [] },
+  { lable: "Start Date", formControlKey: "startDate", type: "date" },
+  { lable: "End Date", formControlKey: "endDate", type: "date" },
 ];
 
 export interface AppLOVData {
@@ -14,7 +15,8 @@ export interface AppLOVData {
 export interface DynamicFieldsData {
   lable: string;
   formControlKey: string;
-  lovDataList: AppLOVData[];
+  lovDataList?: AppLOVData[];
+  type?: string;
 }
 
 export interface SelectedFieldValueEmit {
@@ -24,7 +26,7 @@ export interface SelectedFieldValueEmit {
 
 export interface SetDataOption {
   fetchLovData: Record<string, string | number | any | null>[];
-  optCode?: string | number;
-  optDesc?: string;
+  value?: string | number;
+  name?: string;
   optDesc2?: string;
 }

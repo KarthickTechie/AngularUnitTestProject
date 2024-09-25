@@ -1,20 +1,22 @@
+import { CommonModule } from "@angular/common";
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
-  OnInit,
   inject,
+  OnInit,
 } from "@angular/core";
 import {
-  GoogleChartsModule,
-  ChartType,
   ChartSelectionChangedEvent,
+  ChartType,
+  GoogleChartsModule,
   Row,
 } from "angular-google-charts";
+import {
+  ChartConfiguration,
+  ChartEventEmitOnSelect,
+} from "../../Utils/ChartConfiguration";
 import { TaskService } from "../../services/tasks/task.service";
-import { CommonModule } from "@angular/common";
-import { ChartConfiguration } from "../../Utils/ChartConfiguration";
-import { CreateDynamicFormComponent } from "../create-dynamic-form/create-dynamic-form.component";
 import {
   DynamicFieldsConfiguration,
   DynamicFieldsData,
@@ -23,60 +25,81 @@ import {
 } from "../../Utils/DynamicFieldsConfiguration";
 import { PostService } from "../../services/posts/post.service";
 import { MapDataToDynamicFieldService } from "../../services/dynamicForm/map-data-to-dynamic-field.service";
-
+import { DynamicFormComponent } from "../dynamic-form/dynamic-form.component";
+import { NgChartsComponent } from "../ng-charts/ng-charts.component";
 declare const google: any;
 
 @Component({
-  selector: "app-dashboard",
+  selector: "app-dashboard-lend",
   standalone: true,
-  imports: [CommonModule, GoogleChartsModule, CreateDynamicFormComponent],
-  templateUrl: "./dashboard.component.html",
-  styleUrl: "./dashboard.component.scss",
+  imports: [
+    CommonModule,
+    GoogleChartsModule,
+    DynamicFormComponent,
+    NgChartsComponent,
+  ],
+  templateUrl: "./dashboard-lend.component.html",
+  styleUrl: "./dashboard-lend.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DashboardComponent implements OnInit, AfterViewInit {
+export class DashboardLendComponent implements OnInit, AfterViewInit {
   searchFormFields: DynamicFieldsData[] = DynamicFieldsConfiguration;
-
-  chartType = ChartType.ColumnChart;
-  sm1_ChartType = ChartType.PieChart;
-  sm2_ChartType = ChartType.BarChart;
-
-  seletedTemp: string = "select";
-  templateList = [
-    { value: "temp1", name: "Template 1" },
-    { value: "temp2", name: "Template 2" },
-    { value: "temp3", name: "Template 3" },
-  ];
+  columnChartType = ChartType.ColumnChart;
+  barChartType = ChartType.BarChart;
 
   initianSearchIndex = 0;
-  myColumns = [
-    ChartConfiguration.SearchCriterias[this.initianSearchIndex],
-    "Leads Count",
-    { role: "style" },
-  ];
 
-  chartOptions = {
-    title: `Lead Summary of ${
-      ChartConfiguration.SearchCriterias[this.initianSearchIndex]
-    }`,
-    chartArea: { width: "50%" },
-    hAxis: {
-      title: `${ChartConfiguration.SearchCriterias[this.initianSearchIndex]}`,
-      minValue: 0,
-    },
-    vAxis: {
-      title: "Quantity",
+  columnChartOptions = {
+    myColumns: [
+      ChartConfiguration.SearchCriterias[this.initianSearchIndex],
+      "Leads Count",
+      { role: "style" },
+    ],
+    chartOptions: {
+      title: `Lead Summary of ${
+        ChartConfiguration.SearchCriterias[this.initianSearchIndex]
+      }`,
+      chartArea: { width: "50%" },
+      hAxis: {
+        title: `${ChartConfiguration.SearchCriterias[this.initianSearchIndex]}`,
+        minValue: 0,
+      },
+      vAxis: {
+        title: "Quantity",
+      },
     },
   };
+
+  barChartOptions = {
+    myColumns: [
+      ChartConfiguration.SearchCriterias[this.initianSearchIndex],
+      "Leads Count",
+      { role: "style" },
+    ],
+    chartOptions: {
+      title: `Lead Summary of ${
+        ChartConfiguration.SearchCriterias[this.initianSearchIndex]
+      }`,
+      chartArea: { width: "50%" },
+      hAxis: {
+        title: `Quantity`,
+        minValue: 0,
+      },
+      vAxis: {
+        title: "Zone",
+      },
+    },
+  };
+
   myData!: Row[];
   taskservice = inject(TaskService);
   chartData$ = this.taskservice.fetchChartsData("zone", true);
-  modifiedLovData: any = {
-    zoneList: [],
-    branchList: [],
-    teamsList: [],
-    productList: [],
-  };
+  branchData$ = this.taskservice.fetchChartsData("branch", true);
+
+  modifiedLovData: any = {};
+  allProductsSchemeDataList: any = [];
+  loanTypeList: any = [];
+
   constructor(
     private apiService: PostService,
     private dynamicFormService: MapDataToDynamicFieldService
@@ -87,12 +110,33 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     this.getBranchDropDownsData();
     this.getTeamsDropDownsData();
     this.getProductDropDownsData();
+    this.getListOfProducts();
   }
 
   ngAfterViewInit() {}
 
-  onSelectChart(e: ChartSelectionChangedEvent) {
-    console.log(e);
+  getListOfProducts() {
+    this.apiService.getDataFromLocal("geoData").subscribe((dataList: any) => {
+      this.allProductsSchemeDataList =
+        dataList && dataList.listofTeamProduct
+          ? dataList.listofTeamProduct
+          : [];
+
+      this.allProductsSchemeDataList = this.allProductsSchemeDataList.reduce(
+        (loanGroup: any, item: any) => {
+          const { tpmPrdCode } = item;
+          loanGroup[tpmPrdCode] = loanGroup[tpmPrdCode] || [];
+          loanGroup[tpmPrdCode].push(item);
+          return loanGroup;
+        },
+        {}
+      );
+      console.log(this.allProductsSchemeDataList);
+    });
+  }
+
+  onSelectChart(ev: ChartEventEmitOnSelect) {
+    console.log(ev);
     this.initianSearchIndex += 1;
     if (this.initianSearchIndex < ChartConfiguration.SearchCriterias.length) {
       this.chartData$ = this.taskservice.fetchChartsData(
@@ -100,8 +144,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         true
       );
 
-      this.chartOptions = {
-        ...this.chartOptions,
+      this.columnChartOptions.chartOptions = {
+        ...this.columnChartOptions.chartOptions,
         title: `Lead Summary of ${
           ChartConfiguration.SearchCriterias[this.initianSearchIndex]
         }`,
@@ -118,7 +162,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   getZoneDropDownsData() {
     // get data from extenal service for field dropdown data
     this.apiService
-      .getDataFromLocal("zoneleadsummary")
+      .getDataFromLocal("data/zoneleadsummary")
       .subscribe((dataList: any) => {
         this.modifiedLovData.zoneList = dataList ? dataList.data : "";
         // assign lov data to dynamic field and add same properties for all dynamic field lovdata for unique select values:
@@ -135,7 +179,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   getBranchDropDownsData() {
     // get data from extenal service for field dropdown data
     this.apiService
-      .getDataFromLocal("branchleadsummary")
+      .getDataFromLocal("data/branchleadsummary")
       .subscribe((dataList: any) => {
         this.modifiedLovData.branchList = dataList ? dataList.data : "";
         // assign lov data to dynamic field and add same properties for all dynamic field lovdata for unique select values:
@@ -151,7 +195,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   getTeamsDropDownsData() {
     // get data from extenal service for field dropdown data
     this.apiService
-      .getDataFromLocal("teamsleadsummary")
+      .getDataFromLocal("data/teamsleadsummary")
       .subscribe((dataList: any) => {
         this.modifiedLovData.teamsList = dataList ? dataList.data : "";
         console.log(dataList);
@@ -168,7 +212,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   getProductDropDownsData() {
     // get data from extenal service for field dropdown data
     this.apiService
-      .getDataFromLocal("productleadsummary")
+      .getDataFromLocal("data/productleadsummary")
       .subscribe((dataList: any) => {
         this.modifiedLovData.productList = dataList ? dataList.data : "";
         if (this.modifiedLovData.productList.length > 0) {
@@ -197,20 +241,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
             );
           }
         }
-        // else if (item.formControlKey == type) {
-        //   item.lovDataList = this.modifiedLovData.branchList;
-        // } else if (item.formControlKey == type) {
-        //   item.lovDataList = this.modifiedLovData.listofTeamusers;
-        // } else if (item.formControlKey == type) {
-        //   let option: SetDataOption = {
-        //     fetchLovData: this.modifiedLovData.listofTeamMemberusers,
-        //     value: "usrId",
-        //     name: "usrFirstname",
-        //   };
-        //   item.lovDataList = await this.dynamicFormService.setLovPropertyKeys(
-        //     option
-        //   );
-        // }
       });
       console.log(this.searchFormFields);
     } catch (err) {
@@ -247,17 +277,4 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   submitFormData(formData: any) {
     console.log(formData);
   }
-
-  selectTemplate(ev: any) {
-    this.seletedTemp = ev.target.value;
-  }
 }
-
-/*
-
-zonal data - name - zone name , value - number 
-
-onselection of zone - show branches lead summary 
-
-
-*/

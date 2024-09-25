@@ -1,0 +1,640 @@
+{
+  "organisationsList": [
+    {
+      "value": 2,
+      "name": "ANTELA",
+      "zonalCode": "001043000000000",
+      "teamMeb": 195
+    },
+    {
+      "value": 11,
+      "name": "BAVAN BUJURG BALLA",
+      "zonalCode": "001011000000000",
+      "teamMeb": 189
+    },
+    {
+      "value": 12,
+      "name": "BEAWAR",
+      "zonalCode": "001043000000000",
+      "teamMeb": 174
+    },
+    {
+      "value": 13,
+      "name": "CHAURA BAZAR",
+      "zonalCode": "001010000000000",
+      "teamMeb": 192
+    },
+    {
+      "value": 14,
+      "name": "CHENGALPATTU",
+      "zonalCode": "001011000000000",
+      "teamMeb": 193
+    },
+    {
+      "value": 15,
+      "name": "CHENNAI - CHROMEPET",
+      "zonalCode": "001012000000000",
+      "teamMeb": 173
+    },
+    {
+      "value": 17,
+      "name": "DHUBRI",
+      "zonalCode": "001043000000000",
+      "teamMeb": 174
+    },
+    {
+      "value": 18,
+      "name": "DIBRUGARH",
+      "zonalCode": "001014000000000",
+      "teamMeb": 195
+    },
+    {
+      "value": 20,
+      "name": "KALAMB",
+      "zonalCode": "001013000000000",
+      "teamMeb": 173
+    },
+    {
+      "value": 23,
+      "name": "KALANAUR",
+      "zonalCode": "001001000000000",
+      "teamMeb": 319
+    },
+    {
+      "value": 24,
+      "name": "LB NAGAR",
+      "zonalCode": "001012000000000",
+      "teamMeb": 320
+    },
+    {
+      "value": 34,
+      "name": "LENIN SARANI",
+      "zonalCode": "001011000000000",
+      "teamMeb": 173
+    },
+    {
+      "value": 18,
+      "name": "MIDNAPUR",
+      "zonalCode": "001010000000000",
+      "teamMeb": 320
+    },
+    {
+      "value": 32,
+      "name": "MIRYALGUDA",
+      "zonalCode": "001001000000000",
+      "teamMeb": 319
+    },
+    {
+      "value": 26,
+      "name": "PANAR",
+      "zonalCode": "001012000000000",
+      "teamMeb": 194
+    },
+    {
+      "value": 29,
+      "name": "SANGHOL",
+      "zonalCode": "001014000000000",
+      "teamMeb": 192
+    }
+  ],
+  "listofTeamProduct": [
+    {
+      "tpmSeqId": 62685,
+      "tpmCode": "2",
+      "tpmModifiedDate": "2024-04-24T07:49:20.879+0000",
+      "tpmPrdCode": "Car Loan",
+      "schemeType": "Car Dealer",
+      "noOfAcc": "S14",
+      "limit": "344",
+      "Sanctioned": "20302"
+    },
+    {
+      "tpmSeqId": 62686,
+      "tpmCode": "2",
+      "tpmModifiedDate": "2024-04-24T07:49:20.880+0000",
+
+      "tpmPrdCode": "Cash Loan",
+      "schemeType": "Property Loan",
+      "noOfAcc": "S34",
+      "limit": "676",
+      "Sanctioned": "23"
+    },
+    {
+      "tpmSeqId": 62687,
+      "tpmCode": "2",
+      "tpmModifiedDate": "2024-04-24T07:49:20.881+0000",
+
+      "tpmPrdCode": "Combo Car Loan",
+      "schemeType": "Car Dealer",
+      "noOfAcc": "64",
+      "limit": "2345",
+      "Sanctioned": "676"
+    },
+    {
+      "tpmSeqId": 55190,
+      "tpmCode": "1",
+      "tpmModifiedDate": "2024-03-28T04:41:16.542+0000",
+      "tpmPrdCode": "Corporate Home Loan",
+      "schemeType": "Topup Housing Loan",
+      "noOfAcc": "S74",
+      "limit": "674",
+      "Sanctioned": "6787"
+    },
+    {
+      "tpmSeqId": 62690,
+      "tpmCode": "2",
+      "tpmModifiedDate": "2024-04-24T07:49:20.882+0000",
+
+      "tpmPrdCode": "Educational Loan",
+      "schemeType": "Property Loan",
+      "noOfAcc": "234",
+      "limit": "34",
+      "Sanctioned": "23"
+    },
+    {
+      "tpmSeqId": 55191,
+      "tpmCode": "1",
+      "tpmModifiedDate": "2024-03-28T04:41:16.542+0000",
+
+      "tpmPrdCode": "Housing Loan",
+      "schemeType": "Topup Housing Loan",
+      "noOfAcc": "456",
+      "limit": "7876",
+      "Sanctioned": "89"
+    },
+    {
+      "tpmSeqId": 62691,
+      "tpmCode": "2",
+      "tpmModifiedDate": "2024-04-24T07:49:20.884+0000",
+
+      "tpmPrdCode": "Housing Loan",
+      "schemeType": "Staff Housing Loan",
+      "noOfAcc": "75",
+      "limit": "435.65",
+      "Sanctioned": "784.32"
+    },
+    {
+      "tpmSeqId": 55198,
+      "tpmCode": "1",
+      "tpmModifiedDate": "2024-03-28T04:41:16.542+0000",
+      "tpmPrdCode": "Housing Loan",
+      "schemeType": "Housing Place Loan",
+      "noOfAcc": "68",
+      "limit": "232",
+      "Sanctioned": "459"
+    },
+    {
+      "tpmSeqId": 22737,
+      "tpmCode": "5",
+      "tpmModifiedDate": "2023-08-03T12:29:43.791+0000",
+
+      "tpmPrdCode": "PM SVANIDHI WC",
+      "schemeType": "Corporate Home Loan",
+      "noOfAcc": "23",
+      "limit": "5656",
+      "Sanctioned": "267.40"
+    },
+    {
+      "tpmSeqId": 62699,
+      "tpmCode": "2",
+      "tpmModifiedDate": "2024-04-24T07:49:20.889+0000",
+
+      "tpmPrdCode": "Pensioner Loan",
+      "schemeType": "Car Dealer",
+      "noOfAcc": "84",
+      "limit": "21232",
+      "Sanctioned": "121.45"
+    },
+
+    {
+      "tpmSeqId": 22735,
+      "tpmCode": "5",
+      "tpmModifiedDate": "2023-08-03T12:29:43.790+0000",
+
+      "tpmPrdCode": "Working Capital UCO Bank",
+      "schemeType": "Corporate Home Loan",
+      "noOfAcc": "342",
+      "limit": "2345",
+      "Sanctioned": "676"
+    },
+    {
+      "tpmSeqId": 62698,
+      "tpmCode": "2",
+      "tpmModifiedDate": "2024-04-24T07:49:20.889+0000",
+      "tpmPrdCode": "Car Loan",
+      "schemeType": "Luxury Car Loan",
+      "noOfAcc": "84",
+      "limit": "21232",
+      "Sanctioned": "121.45"
+    }
+  ],
+
+  "listofTeamMemberusers": [
+    {
+      "usrId": 173,
+      "lastModifiedDate": "2023-06-29T13:26:55.498+0000",
+
+      "lastModifiedUser": "admin",
+      "ownerOrgId": null,
+
+      "usrFirstname": "BORADE",
+      "usrGroupId": 992,
+      "usrLastname": "BHUSHANSING V",
+
+      "usrLoginId": "56855",
+      "usrMailid": "56855@g.vom",
+
+      "usrOrgCode": "001032000000000",
+      "usrOrgcode": 33,
+      "usrPassword": "516edd40eedbe8194bc0e743fe75c59b",
+      "usrPhoneNo": "5685556855",
+
+      "usrTeamId": 5,
+      "usrEmpNumber": "56855"
+    },
+    {
+      "usrId": 174,
+      "lastModifiedDate": "2023-06-29T13:26:55.505+0000",
+
+      "lastModifiedUser": "admin",
+      "ownerOrgId": null,
+
+      "usrFirstname": "RAJNEESH",
+
+      "usrGroupId": 992,
+
+      "usrLastname": "SHARMA",
+
+      "usrLoginId": "56897",
+      "usrMailid": "56897@g.com",
+
+      "usrOrgCode": "001014000000000",
+      "usrOrgcode": 15,
+      "usrPassword": "516edd40eedbe8194bc0e743fe75c59b",
+      "usrPhoneNo": "5689756897",
+      "usrPwdExpirationDate": "2023-06-29T13:26:55.505+0000",
+
+      "usrTeamId": 1,
+      "usrEmpNumber": "56897"
+    },
+
+    {
+      "usrId": 189,
+      "lastModifiedDate": "2023-06-29T13:26:55.764+0000",
+
+      "lastModifiedUser": "admin",
+      "ownerOrgId": null,
+
+      "usrFirstname": "AMIT",
+
+      "usrGroupId": 992,
+
+      "usrLastname": "KUMAR YADAV",
+
+      "usrLoginId": "57926",
+      "usrMailid": "57926@g.com",
+
+      "usrOrgCode": "001026000000000",
+      "usrOrgcode": 27,
+      "usrPassword": "516edd40eedbe8194bc0e743fe75c59b",
+      "usrPhoneNo": "5792657926",
+      "usrPwdExpirationDate": "2023-06-29T13:26:55.764+0000",
+
+      "usrTeamId": 1,
+      "usrEmpNumber": "57926"
+    },
+    {
+      "usrId": 190,
+      "lastModifiedDate": "2023-06-29T13:26:55.773+0000",
+
+      "lastModifiedUser": "admin",
+      "ownerOrgId": null,
+
+      "usrFirstname": "SAURABH",
+
+      "usrGroupId": 992,
+
+      "usrLastname": "SINGH",
+
+      "usrLoginId": "57929",
+      "usrMailid": null,
+
+      "usrOrgCode": "001026000000000",
+      "usrOrgcode": 27,
+      "usrPassword": "516edd40eedbe8194bc0e743fe75c59b",
+      "usrPhoneNo": null,
+      "usrPwdExpirationDate": "2023-06-29T13:26:55.773+0000",
+
+      "usrTeamId": 1,
+      "usrEmpNumber": "57929"
+    },
+    {
+      "usrId": 191,
+      "lastModifiedDate": "2023-06-29T13:26:55.787+0000",
+
+      "lastModifiedUser": "admin",
+      "ownerOrgId": null,
+
+      "usrFirstname": "SWETA",
+
+      "usrGroupId": 992,
+
+      "usrLastname": "AWASTHI",
+
+      "usrLoginId": "58005",
+      "usrMailid": null,
+
+      "usrOrgCode": "001019000000000",
+      "usrOrgcode": 20,
+      "usrPassword": "516edd40eedbe8194bc0e743fe75c59b",
+      "usrPhoneNo": null,
+      "usrPwdExpirationDate": "2023-06-29T13:26:55.787+0000",
+
+      "usrTeamId": 1,
+      "usrEmpNumber": "58005"
+    },
+    {
+      "usrId": 192,
+      "lastModifiedDate": "2023-06-29T13:26:55.795+0000",
+
+      "lastModifiedUser": "admin",
+      "ownerOrgId": null,
+
+      "usrFirstname": "ANUP",
+
+      "usrGroupId": 992,
+
+      "usrLastname": "KUMAR",
+
+      "usrLoginId": "58039",
+      "usrMailid": null,
+
+      "usrOrgCode": "001037000000000",
+      "usrOrgcode": 38,
+      "usrPassword": "516edd40eedbe8194bc0e743fe75c59b",
+      "usrPhoneNo": null,
+      "usrPwdExpirationDate": "2023-06-29T13:26:55.795+0000",
+
+      "usrTeamId": 1,
+      "usrEmpNumber": "58039"
+    },
+    {
+      "usrId": 193,
+      "lastModifiedDate": "2023-06-29T13:26:55.806+0000",
+
+      "lastModifiedUser": "admin",
+      "ownerOrgId": null,
+      "usrFirstname": "RAHUL",
+      "usrGroupId": 992,
+      "usrLastname": "KUMAR",
+      "usrLoginId": "58099",
+      "usrMailid": "58099@gmail.com",
+      "usrOrgCode": "001008000000000",
+      "usrOrgcode": 9,
+      "usrPassword": "516edd40eedbe8194bc0e743fe75c59b",
+      "usrPhoneNo": "5809958099",
+      "usrPwdExpirationDate": "2023-06-29T13:26:55.806+0000",
+      "usrTeamId": 5,
+      "usrEmpNumber": "58099"
+    },
+    {
+      "usrId": 194,
+      "lastModifiedDate": "2023-06-29T13:26:55.822+0000",
+
+      "lastModifiedUser": "admin",
+      "ownerOrgId": null,
+
+      "usrFirstname": "JOYDEEP",
+
+      "usrGroupId": 992,
+
+      "usrLastname": "KUMAR GHOSH",
+
+      "usrLoginId": "58155",
+      "usrMailid": "58155@gmail.com",
+
+      "usrOrgCode": "001019000000000",
+      "usrOrgcode": 20,
+      "usrPassword": "516edd40eedbe8194bc0e743fe75c59b",
+      "usrPhoneNo": "5815558155",
+      "usrPwdExpirationDate": "2023-06-29T13:26:55.822+0000",
+
+      "usrTeamId": 5,
+      "usrEmpNumber": "58155"
+    },
+    {
+      "usrId": 195,
+      "lastModifiedDate": "2023-06-29T13:26:55.827+0000",
+
+      "lastModifiedUser": "admin",
+      "ownerOrgId": null,
+
+      "usrFirstname": "SOUMYA",
+
+      "usrGroupId": 992,
+
+      "usrLastname": "BRATA DAS",
+
+      "usrLoginId": "58159",
+      "usrMailid": "nishant_kumar923@yahoo.com",
+
+      "usrOrgCode": "001038000000000",
+      "usrOrgcode": 39,
+      "usrPassword": "516edd40eedbe8194bc0e743fe75c59b",
+      "usrPhoneNo": "9830119423",
+      "usrPwdExpirationDate": "2023-06-29T13:26:55.827+0000",
+
+      "usrTeamId": 1,
+      "usrEmpNumber": "58159"
+    },
+
+    {
+      "usrId": 319,
+      "lastModifiedDate": "2023-06-29T13:26:57.604+0000",
+
+      "lastModifiedUser": "admin",
+      "ownerOrgId": null,
+
+      "usrFirstname": "SATYAM",
+
+      "usrGroupId": 992,
+
+      "usrLastname": "CHOUDHURY",
+
+      "usrLoginId": "66166",
+      "usrMailid": null,
+
+      "usrOrgCode": "001005000000000",
+      "usrOrgcode": 6,
+      "usrPassword": "516edd40eedbe8194bc0e743fe75c59b",
+      "usrPhoneNo": null,
+      "usrPwdExpirationDate": "2023-06-29T13:26:57.604+0000",
+
+      "usrTeamId": 1,
+      "usrEmpNumber": "66166"
+    },
+    {
+      "usrId": 320,
+      "lastModifiedDate": "2023-06-29T13:26:57.608+0000",
+
+      "lastModifiedUser": "admin",
+      "ownerOrgId": null,
+
+      "usrFirstname": "MIRACLE",
+
+      "usrGroupId": 992,
+
+      "usrLastname": "PRINCE SAMSON N",
+
+      "usrLoginId": "66224",
+      "usrMailid": "66224@g.com",
+
+      "usrOrgCode": "001012000000000",
+      "usrOrgcode": 13,
+      "usrPassword": "516edd40eedbe8194bc0e743fe75c59b",
+      "usrPhoneNo": "6622466224",
+      "usrPwdExpirationDate": "2023-06-29T13:26:57.608+0000",
+
+      "usrTeamId": 2,
+      "usrEmpNumber": "66224"
+    },
+    {
+      "usrId": 321,
+      "lastModifiedDate": "2023-06-29T13:26:57.620+0000",
+
+      "lastModifiedUser": "admin",
+      "ownerOrgId": null,
+
+      "usrFirstname": "RUPAM",
+
+      "usrGroupId": 992,
+
+      "usrLastname": "MANDAL",
+
+      "usrLoginId": "66279",
+      "usrMailid": null,
+
+      "usrOrgCode": "001019000000000",
+      "usrOrgcode": 20,
+      "usrPassword": "516edd40eedbe8194bc0e743fe75c59b",
+      "usrPhoneNo": null,
+      "usrPwdExpirationDate": "2023-06-29T13:26:57.620+0000",
+
+      "usrTeamId": 1,
+      "usrEmpNumber": "66279"
+    }
+  ],
+
+  "listofTeamusers": [
+    {
+      "value": 6,
+      "name": "CASA",
+      "lcLastModifiedDate": null,
+      "lcLastModifiedOrg": null,
+      "lcLastModifiedUser": null,
+      "lcLoanCmmtteModerateId": 1,
+      "ownerOrgId": null,
+      "classType": "com.sai.lendperfect.business.entity.SetLoanCommittee"
+    },
+    {
+      "value": 4,
+      "name": "CLST",
+      "lcLastModifiedDate": null,
+      "lcLastModifiedOrg": null,
+      "lcLastModifiedUser": null,
+      "lcLoanCmmtteModerateId": 1,
+      "ownerOrgId": null,
+      "classType": "com.sai.lendperfect.business.entity.SetLoanCommittee"
+    },
+    {
+      "value": 1,
+      "name": "HLST",
+      "lcLastModifiedDate": null,
+      "lcLastModifiedOrg": null,
+      "lcLastModifiedUser": null,
+      "lcLoanCmmtteModerateId": 50,
+      "ownerOrgId": null,
+      "classType": "com.sai.lendperfect.business.entity.SetLoanCommittee"
+    },
+    {
+      "value": 5,
+      "name": "MLST",
+      "lcLastModifiedDate": null,
+      "lcLastModifiedOrg": null,
+      "lcLastModifiedUser": null,
+      "lcLoanCmmtteModerateId": 1,
+      "ownerOrgId": null,
+      "classType": "com.sai.lendperfect.business.entity.SetLoanCommittee"
+    },
+    {
+      "value": 2,
+      "name": "RLST",
+      "lcLastModifiedDate": null,
+      "lcLastModifiedOrg": null,
+      "lcLastModifiedUser": null,
+      "lcLoanCmmtteModerateId": 1,
+      "ownerOrgId": null,
+      "classType": "com.sai.lendperfect.business.entity.SetLoanCommittee"
+    }
+  ],
+
+  "listOfZonal": [
+    {
+      "orgCode": "001001000000000",
+      "value": 2,
+      "orgLevel": "R",
+      "name": "AGARTALA",
+      "orgScode": "7061"
+    },
+
+    {
+      "orgCode": "001010000000000",
+      "value": 11,
+      "orgLevel": "R",
+      "name": "BHUBANESWAR",
+      "orgScode": "7023"
+    },
+    {
+      "orgCode": "001011000000000",
+      "value": 12,
+      "orgLevel": "R",
+      "name": "CHANDIGARH",
+      "orgScode": "7005"
+    },
+    {
+      "orgCode": "001012000000000",
+      "value": 13,
+      "orgLevel": "R",
+      "name": "CHENNAI",
+      "orgScode": "7032"
+    },
+    {
+      "orgCode": "001013000000000",
+      "value": 14,
+      "orgLevel": "R",
+      "name": "COIMBATORE",
+      "orgScode": "7046"
+    },
+    {
+      "orgCode": "001014000000000",
+      "value": 15,
+      "orgLevel": "R",
+      "name": "DEHRADUN",
+      "orgScode": "7049"
+    },
+    {
+      "orgCode": "001015000000000",
+      "value": 16,
+      "orgLevel": "R",
+      "name": "DHARAMSHALA",
+      "orgScode": "7003"
+    },
+    {
+      "orgCode": "001043000000000",
+      "value": 44,
+      "orgLevel": "R",
+      "name": "VARANASI",
+      "orgScode": "7036"
+    }
+  ]
+}

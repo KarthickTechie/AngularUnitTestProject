@@ -1,0 +1,31 @@
+# Dynamic Form Component
+
+install this component in your project and use where ever you want.
+<dynamicForm [dynamicFormFieldData]="dynamicFormFieldList"></dynamicForm>
+
+# Usage
+
+In DynamicFieldsConfiguration.ts, add fields based on your requirment in DynamicFieldsConfiguration array object variable
+
+# Example:
+
+export const DynamicFieldsConfiguration: DynamicFieldsData[] = [
+{ lable: "Zone", formControlKey: "zone", lovDataList: [] },
+{ lable: "Branch", formControlKey: "branch", lovDataList: [] },
+{ lable: "Teams", formControlKey: "teams", lovDataList: [] },
+{ lable: "Product", formControlKey: "product", lovDataList: [] },
+{ lable: "Start Date", formControlKey: "startDate", type: "date" },
+{ lable: "End Date", formControlKey: "endDate", type: "date" }
+];
+
+Here, lable -- is for form control lable name like 'Zonal',
+formControlKey -- is for form control name like 'zonal',
+lovDataList -- is for dropdown array data
+type --- is for type of input field
+
+# Events Changes
+
+    selectedField($event): it return a value of selected dropdown data.
+    example: {selectedValue: '1', fieldControlName: 'zonal'}
+
+    onSubmitForm($ev): it return a values of form data on form submit.
