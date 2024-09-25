@@ -46,6 +46,7 @@ export class DashboardLendComponent implements OnInit, AfterViewInit {
   searchFormFields: DynamicFieldsData[] = DynamicFieldsConfiguration;
   columnChartType = ChartType.ColumnChart;
   barChartType = ChartType.BarChart;
+  piChart = ChartType.PieChart;
 
   initianSearchIndex = 0;
 
@@ -143,19 +144,33 @@ export class DashboardLendComponent implements OnInit, AfterViewInit {
         ChartConfiguration.SearchCriterias[this.initianSearchIndex],
         true
       );
-
-      this.columnChartOptions.chartOptions = {
-        ...this.columnChartOptions.chartOptions,
-        title: `Lead Summary of ${
-          ChartConfiguration.SearchCriterias[this.initianSearchIndex]
-        }`,
-        hAxis: {
-          title: `${
+      if (ev.chartType == "ColumnChart") {
+        this.columnChartOptions.chartOptions = {
+          ...this.columnChartOptions.chartOptions,
+          title: `Lead Summary of ${
             ChartConfiguration.SearchCriterias[this.initianSearchIndex]
           }`,
-          minValue: 0,
-        },
-      };
+          hAxis: {
+            title: `${
+              ChartConfiguration.SearchCriterias[this.initianSearchIndex]
+            }`,
+            minValue: 0,
+          },
+        };
+      } else {
+        this.barChartOptions.chartOptions = {
+          ...this.barChartOptions.chartOptions,
+          title: `Lead Summary of ${
+            ChartConfiguration.SearchCriterias[this.initianSearchIndex]
+          }`,
+          hAxis: {
+            title: `${
+              ChartConfiguration.SearchCriterias[this.initianSearchIndex]
+            }`,
+            minValue: 0,
+          },
+        };
+      }
     }
   }
 
