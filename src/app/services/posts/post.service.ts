@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
 import { Post } from "../../models/Post";
 import { HttpClient } from "@angular/common/http";
-import { environment } from "../../../environments/environment";
+// import { environment } from "../../../environments/environment";
 import { catchError, throwError } from "rxjs";
 
 @Injectable({
   providedIn: "root",
 })
 export class PostService {
-  URL = environment.APIURL;
+  // URL = environment.APIURL;
 
   constructor(private http: HttpClient) {}
 
