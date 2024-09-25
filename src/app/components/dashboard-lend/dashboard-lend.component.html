@@ -63,7 +63,7 @@
             <div class="col-4">Zone</div>
           </div>
         </div>
-        @if( chartData$ | async; as myData ){
+        @if( branchData$ | async; as myData ){
         <app-ng-charts
           [chartData]="myData"
           [chartType]="barChartType"
@@ -90,7 +90,7 @@
         ></google-chart> -->
         <app-ng-charts
           [chartData]="myData"
-          [chartType]="columnChartType"
+          [chartType]="piChart"
           [chartOptionData]="columnChartOptions"
           (chartColumnSelect)="onSelectChart($event)"
         ></app-ng-charts>
