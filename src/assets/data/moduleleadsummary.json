@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "name": "Retail",
+      "value": 2323,
+      "yearData": [
+        { "value": 7682, "id": 1, "year": "20/04/2024" },
+        { "value": 2673, "id": 1, "year": "10/02/2021" },
+        { "value": 3444, "id": 1, "year": "01/01/2022" }
+      ]
+    },
+    {
+      "name": "Agri",
+      "value": 4589,
+      "yearData": [
+        { "value": 6667, "id": 1, "year": "20/04/2024" },
+        { "value": 4545, "id": 1, "year": "10/02/2022" },
+        { "value": 8999, "id": 1, "year": "01/01/2023" }
+      ]
+    },
+    {
+      "name": "MSME",
+      "value": 6763,
+      "yearData": [
+        { "value": 8986, "id": 1, "year": "20/04/2024" },
+        { "value": 456, "id": 1, "year": "10/02/2022" },
+        { "value": 7832, "id": 1, "year": "01/01/2023" }
+      ]
+    },
+    {
+      "name": "Gold",
+      "value": 7878,
+      "yearData": [
+        { "value": 5656, "id": 1, "year": "20/04/2024" },
+        { "value": 2673, "id": 1, "year": "10/02/2023" },
+        { "value": 454, "id": 1, "year": "01/01/2021" }
+      ]
+    },
+    {
+      "name": "CORP",
+      "value": 895,
+      "yearData": [
+        { "value": 7682, "id": 1, "year": "20/04/2024" },
+        { "value": 5657, "id": 1, "year": "10/02/2022" },
+        { "value": 1290, "id": 1, "year": "01/01/2023" }
+      ]
+    }
+  ]
+}

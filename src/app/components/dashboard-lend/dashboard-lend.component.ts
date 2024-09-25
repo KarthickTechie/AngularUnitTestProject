@@ -44,58 +44,85 @@ declare const google: any;
 })
 export class DashboardLendComponent implements OnInit, AfterViewInit {
   searchFormFields: DynamicFieldsData[] = DynamicFieldsConfiguration;
-  columnChartType = ChartType.ColumnChart;
-  barChartType = ChartType.BarChart;
+  columnChartType = ChartType.ComboChart;
+  // barChartType = ChartType.BarChart;
   piChart = ChartType.PieChart;
 
   initianSearchIndex = 0;
 
   columnChartOptions = {
-    myColumns: [
-      ChartConfiguration.SearchCriterias[this.initianSearchIndex],
-      "Leads Count",
-      { role: "style" },
-    ],
+    myColumns: ["Year", "Retail", "Agri", "MSME", "Gold", "Corp"],
     chartOptions: {
-      title: `Lead Summary of ${
-        ChartConfiguration.SearchCriterias[this.initianSearchIndex]
-      }`,
+      title: `Monthly Wise`,
       chartArea: { width: "50%" },
       hAxis: {
-        title: `${ChartConfiguration.SearchCriterias[this.initianSearchIndex]}`,
+        title: `Modules`,
         minValue: 0,
       },
       vAxis: {
-        title: "Quantity",
+        title: "No. Of Amount",
       },
+      seriesType: "bars",
+      series: { 4: { type: "line" } },
     },
   };
 
-  barChartOptions = {
+  pieChartOptions = {
     myColumns: [
-      ChartConfiguration.SearchCriterias[this.initianSearchIndex],
+      ["Retail", "Agri", "MSME", "GOLD", "CORP"],
       "Leads Count",
       { role: "style" },
     ],
     chartOptions: {
-      title: `Lead Summary of ${
-        ChartConfiguration.SearchCriterias[this.initianSearchIndex]
-      }`,
+      title: `Sanctioned Amount`,
       chartArea: { width: "50%" },
-      hAxis: {
-        title: `Quantity`,
-        minValue: 0,
-      },
-      vAxis: {
-        title: "Zone",
-      },
+      // hAxis: {
+      //   title: `Quantity`,
+      //   minValue: 0,
+      // },
+      // vAxis: {
+      //   title: "Module",
+      // },
     },
   };
 
   myData!: Row[];
   taskservice = inject(TaskService);
-  chartData$ = this.taskservice.fetchChartsData("zone", true);
-  branchData$ = this.taskservice.fetchChartsData("branch", true);
+
+  // chartData$ = this.taskservice.fetchComboChartsData("module", true);
+  chartData$ = [
+    // ["Month", "Retail", "Agri", "MSME", "Gold", "CORP"],
+    // ["2004/05", 165, 938, 522, 998, 450],
+    // ["2005/06", 135, 1120, 599, 1268, 288],
+    // ["2006/07", 157, 1167, 587, 807, 397],
+    // ["2007/08", 139, 1110, 615, 968, 215],
+    // ["2008/09", 136, 691, 629, 1026, 569.6],
+    ["2023/05", 50, 33, 24.5, 33, 22],
+    ["2024/05", 23, 41, 22.5, 22, 2],
+    ["2021/05", 44, 82, 13, 43, 12],
+    ["2023/05", 19, 33, 23, 21, 89],
+    ["2022/05", 30, 20, 12, 34, 22],
+  ];
+  pieChartData$ = this.taskservice.fetchChartsData("module", true);
+
+  branchesData = [
+    {
+      orgName: "Chennai",
+      retail: "849",
+      agri: "599",
+      msme: "500",
+      gold: "200",
+    },
+    { orgName: "Delhi", retail: "200", agri: "300", msme: "400", gold: "150" },
+    { orgName: "Tnagar", retail: "849", agri: "480", msme: "250", gold: "600" },
+    {
+      orgName: "Poonamale",
+      retail: "940",
+      agri: "234",
+      msme: "700",
+      gold: "400",
+    },
+  ];
 
   modifiedLovData: any = {};
   allProductsSchemeDataList: any = [];
@@ -116,6 +143,15 @@ export class DashboardLendComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {}
 
+  getTot(rec: any) {
+    let val =
+      Number(rec.retail) +
+      Number(rec.agri) +
+      Number(rec.gold) +
+      Number(rec.msme);
+    console.log(val);
+    return val ? val : "";
+  }
   getListOfProducts() {
     this.apiService.getDataFromLocal("geoData").subscribe((dataList: any) => {
       this.allProductsSchemeDataList =
@@ -140,10 +176,10 @@ export class DashboardLendComponent implements OnInit, AfterViewInit {
     console.log(ev);
     this.initianSearchIndex += 1;
     if (this.initianSearchIndex < ChartConfiguration.SearchCriterias.length) {
-      this.chartData$ = this.taskservice.fetchChartsData(
-        ChartConfiguration.SearchCriterias[this.initianSearchIndex],
-        true
-      );
+      // this.pieChartData$ = this.taskservice.fetchChartsData(
+      //   ChartConfiguration.SearchCriterias[this.initianSearchIndex],
+      //   true
+      // );
       if (ev.chartType == "ColumnChart") {
         this.columnChartOptions.chartOptions = {
           ...this.columnChartOptions.chartOptions,
@@ -158,17 +194,17 @@ export class DashboardLendComponent implements OnInit, AfterViewInit {
           },
         };
       } else {
-        this.barChartOptions.chartOptions = {
-          ...this.barChartOptions.chartOptions,
-          title: `Lead Summary of ${
-            ChartConfiguration.SearchCriterias[this.initianSearchIndex]
-          }`,
-          hAxis: {
-            title: `${
-              ChartConfiguration.SearchCriterias[this.initianSearchIndex]
-            }`,
-            minValue: 0,
-          },
+        this.pieChartOptions.chartOptions = {
+          ...this.pieChartOptions.chartOptions,
+          // title: `Lead Summary of ${
+          //   ChartConfiguration.SearchCriterias[this.initianSearchIndex]
+          // }`,
+          // hAxis: {
+          //   title: `${
+          //     ChartConfiguration.SearchCriterias[this.initianSearchIndex]
+          //   }`,
+          //   minValue: 0,
+          // },
         };
       }
     }
