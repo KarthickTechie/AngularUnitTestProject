@@ -46,9 +46,14 @@ a{
     text-align: center;
 }
 
-.card-border-bottom{
+.card-border-left{
     border-left-color: var(--purple-color);
     border-left-width : 10px;
     border-left-style: solid;
+}
+.card-border-bottom{
+    border-bottom-color: var(--purple-color);
+    border-bottom-width : 10px;
+    border-bottom-style: solid;
 }
 
