@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 :root{
  --purple-color : #622248;
+ --card-border-width: 8px;
 }
 body{
     font-family: 'Roboto';
@@ -48,12 +49,12 @@ a{
 
 .card-border-left{
     border-left-color: var(--purple-color);
-    border-left-width : 10px;
+    border-left-width : var(--card-border-width);
     border-left-style: solid;
 }
 .card-border-bottom{
     border-bottom-color: var(--purple-color);
-    border-bottom-width : 10px;
+    border-bottom-width : var(--card-border-width);
     border-bottom-style: solid;
 }
 
