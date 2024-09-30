@@ -1,11 +1,14 @@
 <div class="fields-bar">
   <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit(dynamicForm.value)">
-    <div class="grid-label-bar">
-      @if(dynamicForm.value.length != 0){ @for(field of dynamicFormFieldData;
-      let i =$index; track i) { @if(field.lovDataList &&
-      field.lovDataList.length > 0){
+    <div class="grid-label-bar" *ngIf="dynamicForm.value.length != 0">
+        
+       
+        
+        
+          <ng-container *ngFor="let field of dynamicFormFieldData;let i = index;">
+          
 
-      <div class="list">
+      <div class="list" *ngIf="field.lovDataList && field.lovDataList.length > 0; else dynamicNonDropdown">
         <div class="lable">{{ field.lable }}<span>-</span></div>
 
         <select
@@ -15,18 +18,14 @@
           placeholder="Select"
         >
           <option selected value="">Select</option>
-          @for(item of field.lovDataList; track item){
-          <option [value]="item.value">{{ item.name }}</option>
-          }
+          <option [value]="item.value" *ngFor="let item of field.lovDataList;">{{ item.name }}</option>
+          
         </select>
-        <!-- <div class="dropdown">
-        <button class="dropbtn"> Select</button>
-        <div class="dropdown-content">
-          <div href="#">1</div>
-        </div>
-      </div> -->
+       
       </div>
-      }@else{
+      
+      
+    <ng-template #dynamicNonDropdown>
       <div class="list">
         <div class="lable">{{ field.lable }}<span>-</span></div>
         <input
@@ -38,63 +37,9 @@
           placeholder="Select"
         />
       </div>
-      }
-      <!-- <div class="list">
-    <div class="lable">Regions <span>-</span></div>
-    <div class="dropdown">
-      <button class="dropbtn">Select</button>
-      <div class="dropdown-content">
-        <div href="#">Link 1</div>
-        <div href="#">Link 2</div>
-        <div href="#">Link 3</div>
-      </div>
-    </div>
-  </div>
-  <div class="list">
-    <div class="lable">Branch <span>-</span></div>
-    <div class="dropdown">
-      <button class="dropbtn">Select</button>
-      <div class="dropdown-content">
-        <div href="#">Link 1</div>
-        <div href="#">Link 2</div>
-        <div href="#">Link 3</div>
-      </div>
-    </div>
-  </div>
-  <div class="list">
-    <div class="lable">Product <span>-</span></div>
-    <div class="dropdown">
-      <button class="dropbtn">Select</button>
-      <div class="dropdown-content">
-        <div href="#">Link 1</div>
-        <div href="#">Link 2</div>
-        <div href="#">Link 3</div>
-      </div>
-    </div>
-  </div>
-  <div class="list">
-    <div class="lable">Start Date <span>-</span></div>
-    <div class="dropdown">
-      <button class="dropbtn">Select</button>
-      <div class="dropdown-content">
-        <div href="#">Link 1</div>
-        <div href="#">Link 2</div>
-        <div href="#">Link 3</div>
-      </div>
-    </div>
-  </div>
-  <div class="list">
-    <div class="lable">End Date <span>-</span></div>
-    <div class="dropdown">
-      <button class="dropbtn">Select</button>
-      <div class="dropdown-content">
-        <div href="#">Link 1</div>
-        <div href="#">Link 2</div>
-        <div href="#">Link 3</div>
-      </div>
-    </div>
-  </div> -->
-      } }
+    </ng-template>
+     
+    </ng-container>
 
       <div class="list lastList">
         <div class="lable">

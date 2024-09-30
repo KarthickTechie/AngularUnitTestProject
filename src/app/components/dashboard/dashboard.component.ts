@@ -20,6 +20,7 @@ import {
   DynamicFieldsData,
   SelectedFieldValueEmit,
   SetDataOption,
+  testFieldData
 } from "../../Utils/DynamicFieldsConfiguration";
 import { PostService } from "../../services/posts/post.service";
 import { MapDataToDynamicFieldService } from "../../services/dynamicForm/map-data-to-dynamic-field.service";
@@ -35,7 +36,7 @@ declare const google: any;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
-  searchFormFields: DynamicFieldsData[] = DynamicFieldsConfiguration;
+  searchFormFields: DynamicFieldsData[] = DynamicFieldsConfiguration(testFieldData);
 
   chartType = ChartType.ColumnChart;
   sm1_ChartType = ChartType.PieChart;

@@ -39,16 +39,7 @@ export class DynamicFormComponent {
     private fb: FormBuilder,
     private mapDynamicData: MapDataToDynamicFieldService
   ) {
-    // bind data to form control field by using subject
-    // this.mapDynamicData.dataBindToField.subscribe(
-    //   (data: SelectedFieldValueEmit[]) => {
-    //     if (data) {
-    //       this.dynamicForm
-    //         .get(data[0].fieldControlName)
-    //         ?.setValue(data[0].selectedValue);
-    //     }
-    //   }
-    // );
+    
   }
 
   ngOnInit() {

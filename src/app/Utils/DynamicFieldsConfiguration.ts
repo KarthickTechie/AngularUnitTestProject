@@ -1,4 +1,12 @@
-export const DynamicFieldsConfiguration: DynamicFieldsData[] = [
+export const DynamicFieldsConfiguration  = (fieldConfig:DynamicFieldsData[]):DynamicFieldsData[] => {
+      if(fieldConfig)
+        return fieldConfig
+      else 
+        return testFieldData
+}
+
+
+export const testFieldData:DynamicFieldsData[] = [
   { lable: "Zone", formControlKey: "zone", lovDataList: [] },
   { lable: "Branch", formControlKey: "branch", lovDataList: [] },
   { lable: "Teams", formControlKey: "teams", lovDataList: [] },

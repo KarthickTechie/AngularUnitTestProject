@@ -22,11 +22,13 @@ import {
   DynamicFieldsData,
   SelectedFieldValueEmit,
   SetDataOption,
+  testFieldData,
 } from "../../Utils/DynamicFieldsConfiguration";
 import { PostService } from "../../services/posts/post.service";
 import { MapDataToDynamicFieldService } from "../../services/dynamicForm/map-data-to-dynamic-field.service";
 import { DynamicFormComponent } from "../dynamic-form/dynamic-form.component";
 import { NgChartsComponent } from "../ng-charts/ng-charts.component";
+import { NgxSuperDashboardModule } from "ngx-super-dashboard";
 declare const google: any;
 
 @Component({
@@ -37,13 +39,14 @@ declare const google: any;
     GoogleChartsModule,
     DynamicFormComponent,
     NgChartsComponent,
+    NgxSuperDashboardModule
   ],
   templateUrl: "./dashboard-lend.component.html",
   styleUrl: "./dashboard-lend.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardLendComponent implements OnInit, AfterViewInit {
-  searchFormFields: DynamicFieldsData[] = DynamicFieldsConfiguration;
+  searchFormFields: DynamicFieldsData[] = DynamicFieldsConfiguration(testFieldData);;
   columnChartType = ChartType.ComboChart;
   // barChartType = ChartType.BarChart;
   piChart = ChartType.PieChart;
