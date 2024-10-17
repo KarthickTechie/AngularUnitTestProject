@@ -9,3 +9,59 @@
             Name : {{lead.name}}</a></li>
     }
 </ul>
+
+<app-wordtextbox ></app-wordtextbox>
+
+<div>
+    <form >
+        <div class="form-container">
+        <input type="text" placeholder="Enter Name">
+        <input type="password" placeholder="Enter password">
+        <input type="password" placeholder="Confirm Password">
+        <label >Male
+            <input type="radio" name="gender" value="male">
+        </label>
+        <label >FeMale
+            <input type="radio" name="gender" value="female">
+        </label>
+        <select name="quaification" [(ngModel)]="qual">
+            <option value="bachelor">Bachelors</option>
+            <option value="master">Master</option>
+        </select>
+        <label>{{qual}}</label>
+        <fieldset>
+            <legend>Choose your Hobbies</legend>
+          
+        <label>Cricket
+        <input type="checkbox" value="Sports">
+    </label>
+    <label>Movies
+        <input type="checkbox" value="Movies">
+    </label>
+    <label>Music
+        <input type="checkbox" value="Music"> 
+    </label>
+</fieldset>
+<fieldset>
+    <mat-slide-toggle (change)="onTermsChanges($event)" labelPosition="before">
+        <span [ngClass]="terms.isAgreed ? 'success-text' : '' ">{{terms.text}}</span></mat-slide-toggle>
+
+</fieldset>
+<fieldset>
+    <div class="demo-section">
+        Button toggles badge visibility
+        <button mat-raised-button matBadge="7" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()">
+            Hide
+        </button>
+      </div>
+</fieldset>
+        <input type="submit" value="Submit">
+    </div>
+    </form>
+</div>
+
+<div style="margin-left: 40vw;margin-top: 5vh;">
+    <app-countertext [ops]="count"></app-countertext>
+    <app-counterbutton (onCountButtonClicked)="countClicked($event)"></app-counterbutton>
+
+</div>

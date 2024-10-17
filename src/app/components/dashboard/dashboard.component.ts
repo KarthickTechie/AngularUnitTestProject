@@ -251,6 +251,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   selectTemplate(ev: any) {
     this.seletedTemp = ev.target.value;
   }
+
+
+  
+
 }
 
 /*

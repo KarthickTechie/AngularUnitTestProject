@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { Post } from '../../models/Post';
+import { Post, Theme } from '../../models/Post';
 import { PostService } from '../../services/posts/post.service';
 import { PostdetailComponent } from '../postdetail/postdetail.component';
 import { NgFor } from '@angular/common';
+import { User } from '../../models/User'; // nameed and default 
 
 @Component({
   selector: 'app-post',
@@ -14,6 +15,9 @@ import { NgFor } from '@angular/common';
 export class PostComponent {
 
   posts:Post[] = []
+  user !: User ; // I promise to give value for user variable 
+  theme : Theme = { mode : 'light'} ;
+
   constructor(private postservice:PostService){
 
   }
