@@ -22,7 +22,7 @@ import { CountertextComponent } from '../countertext/countertext.component';
 export class LeadinboxComponent {
 
 
-  count = 0
+  countops !: string
 
 
   hidden = false
@@ -47,19 +47,6 @@ export class LeadinboxComponent {
   }
 
   countClicked(e:string){
-    this.countOperation(e)
+      this.countops = e
   }
-
-  countOperation(ops:string){
-
-    switch(ops){
-      case '+':
-        this.count++
-        break;
-      case '-':
-        this.count--;
-        break;
-    }
-  }
-
 }

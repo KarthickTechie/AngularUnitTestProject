@@ -6,10 +6,10 @@ import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/c
   imports: [],
   templateUrl: './countertext.component.html',
   styleUrl: './countertext.component.scss',
-  changeDetection : ChangeDetectionStrategy.OnPush
 })
 export class CountertextComponent implements OnChanges {
-  @Input()ops !: number | string 
+  count = 0
+  @Input()ops !: string 
 
  
   ngOnInit(){
@@ -20,13 +20,22 @@ export class CountertextComponent implements OnChanges {
 
   }
 
-  ngAfterViewInit(){
-
-  }
 
   ngOnChanges(){
     console.log(`ops value changes ${this.ops}`)
+    this.countOperation()
   }
 
+  countOperation(){
+
+    switch(this.ops){
+      case '+':
+        this.count++
+        break;
+      case '-':
+        this.count--;
+        break;
+    }
+  }
 
 }
