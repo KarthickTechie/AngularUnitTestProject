@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, effect, input } from '@angular/core';
 
 @Component({
   selector: 'app-countertext',
@@ -11,6 +11,13 @@ export class CountertextComponent implements OnChanges {
   count = 0
   @Input()ops !: string 
 
+  disabled = input(false)
+
+  constructor(){
+    effect(()=>{
+      console.log(`input disables => ${this.disabled()}`)
+    })
+  }
  
   ngOnInit(){
 

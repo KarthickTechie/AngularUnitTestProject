@@ -60,8 +60,16 @@
     </form>
 </div>
 
-<div style="margin-left: 40vw;margin-top: 5vh;">
-    <app-countertext [ops]="countops"></app-countertext>
+<div style="margin-left: 40vw;margin-top: 5vh;" #abc>
+    <app-countertext [ops]="countops" [disabled]="setDisable"></app-countertext>
     <app-counterbutton (onCountButtonClicked)="countClicked($event)"></app-counterbutton>
 
+    <div>
+        <button (click)=" setDisable = !setDisable ">{{ setDisable ? 'Enable' : 'Disable'}}</button>
+    </div>
 </div>
+<!-- ngif , ngswitchcase  -->
+<ng-template  let-data let-fav="color"  #dynamo>
+    <h1>Hi Am {{data}} , I like {{fav}} color</h1>
+</ng-template>
+
