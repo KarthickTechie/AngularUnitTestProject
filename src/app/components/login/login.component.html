@@ -4,6 +4,14 @@
     template driven form 
 
  -->
+ <lib-ngx-super-dashboard
+ [dynamicFormFieldData]="dynamicSearchFormFields"
+ (onSelect)="OnSelected($event)"
+ (onSubmit)="OnSearchSubmit($event)"
+ [cardConfig]="countCardsListData"
+>
+</lib-ngx-super-dashboard>
+
     <div>
         <h3>Form Control Example </h3>
         <form>
