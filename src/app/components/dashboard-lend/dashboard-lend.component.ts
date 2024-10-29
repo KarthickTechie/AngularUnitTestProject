@@ -125,7 +125,7 @@ export class DashboardLendComponent implements OnInit, AfterViewInit {
   ];
 
   modifiedLovData: any = {};
-  allProductsSchemeDataList: any = [];
+  allProductsSchemeDataList: any[] = [];
   loanTypeList: any = [];
 
   constructor(

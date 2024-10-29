@@ -167,7 +167,7 @@
                     {{ loan.key }}
                   </td>
                   <td colspan="5" class="colspan">
-                    <tr *ngFor="let item of $any(loan).value">
+                    <tr *ngFor="let item of loan.value">
                       <td>{{ item.schemeType }}</td>
                       <td>{{ item.noOfAcc }}</td>
                       <td>{{ item.limit }}</td>

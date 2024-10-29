@@ -2,7 +2,7 @@
   @if(dynamicForm.value.length != 0){
   <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit(dynamicForm.value)">
     <div class="row">
-      @for(field of dynamicFormFieldData; let i =$index; track i) {
+      @for(field of dynamicFormFieldData; let i = $index; track i ; let o = $odd ; ) {
       <div class="form-group col-md-3">
         <!-- <label>{{ field.lable }}</label> -->
         <select

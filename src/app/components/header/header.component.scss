@@ -1,0 +1,23 @@
+.header-container{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    height: 5vh;
+    width: 100vw;
+    top: 0;
+    z-index:999;
+    background-color: cornflowerblue;
+    ul > li {
+        margin-top: 10px;
+        display: inline-block;
+        list-style: none;
+        min-width: 200px;
+        a{
+            font-size: x-large;
+            color: white;
+
+        }
+    }
+}
