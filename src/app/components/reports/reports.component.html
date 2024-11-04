@@ -1,1 +1,43 @@
-<p>reports works!</p>
+<div style="position: relative;top: 10vh;">
+    <button class="" (click)="showProducts()">Show Products</button>
+    
+    <div *ngIf="products.length == 0; else keymapper">
+        Loading Products
+    </div>
+
+    <ng-template #keymapper>
+        <h1>Key Mapper</h1>
+        <div class="md-height-flex">
+            <div *ngFor="let k of getKeys()" class="style-key">
+                <input type="checkbox" style="margin: 0.1em 0.2em ;" 
+                [value]="k"
+                [checked]="getChecked(k)" [disabled]="getChecked(k)"
+                (change)="setKeys(k)"
+                >
+                <span >{{k}}</span>
+            </div>
+        </div>
+        <button (click)="isShowProductGrid = !isShowProductGrid">Show Product Grid</button>
+    </ng-template>
+
+    <ng-container *ngIf="!isShowProductGrid; else productGrid">
+
+    </ng-container>
+    
+    <ng-template #productGrid>
+        <table>
+            <th *ngFor="let h of finalKeys">{{h}}</th>
+        <tbody>
+            <tr *ngFor="let p of products">
+                <ng-container *ngFor="let h of finalKeys">
+                    <td>
+                        <img *ngIf="h == 'thumbnail'" width="75px" height="75px" [src]="p[h]" alt="">
+                        <span *ngIf="h != 'thumbnail'">{{p[h]}}</span>
+                    </td>
+                </ng-container>
+            </tr>
+        </tbody>
+    </table>
+
+    </ng-template>
+</div>

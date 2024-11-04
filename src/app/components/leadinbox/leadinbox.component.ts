@@ -3,24 +3,26 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { WordtextboxComponent } from '../../widgets/wordtextbox/wordtextbox.component';
 import { FormsModule } from '@angular/forms';
 import { MatSlideToggleChange, MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { CommonModule } from '@angular/common';
+import { CommonModule, UpperCasePipe } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatBadgeModule} from '@angular/material/badge';
 import { CounterbuttonComponent } from '../counterbutton/counterbutton.component';
 import { CountertextComponent } from '../countertext/countertext.component';
+import { UpperPipe } from '../../pipes/upper.pipe';
 
 @Component({
   selector: 'app-leadinbox',
   standalone: true,
   imports: [RouterModule , FormsModule,WordtextboxComponent,MatSlideToggleModule,CommonModule,
-    MatBadgeModule, MatButtonModule, MatIconModule,CounterbuttonComponent,CountertextComponent
+    MatBadgeModule, MatButtonModule, MatIconModule,CounterbuttonComponent,CountertextComponent,UpperPipe
   ],
   templateUrl: './leadinbox.component.html',
   styleUrl: './leadinbox.component.scss'
 })
 export class LeadinboxComponent {
 
+  title = "leadinbox works!"
   setDisable = false
 
   countops !: string

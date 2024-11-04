@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component , Pipe, PipeTransform} from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,18 @@ import { HeaderComponent } from './components/header/header.component';
 })
 export class AppComponent {
   title = 'RoutingTraining';
+
+
+
+  ngAfterContentInit(){
+
+  }
+
+  ngAfterContentChecked(){
+
+  }
+
+
+
 }
+

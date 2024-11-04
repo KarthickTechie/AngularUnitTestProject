@@ -1,0 +1,31 @@
+.md-height-flex{
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 500px;
+    width: 500px;
+}
+
+.style-key{
+
+    border: 1px solid #ccc;
+    padding: 0.1em 0.2em;
+    margin: 0.2em;
+    border-radius: 5px;
+}
+
+table{
+
+    margin: 5em auto;
+}
+
+th{
+    margin: 0.5em;
+    padding: 0.2em;
+    text-transform: uppercase;
+    width: 150px;
+    border: 1px solid;
+}
+
+td{
+    border: 1px solid;
+}

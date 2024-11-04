@@ -13,6 +13,7 @@ export class CounterbuttonComponent {
 
   add(){
     this.onCountButtonClicked.emit('+')
+
   }
 
   sub(){

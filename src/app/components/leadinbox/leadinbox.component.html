@@ -1,4 +1,4 @@
-<p>leadinbox works!</p>
+<p>{{ title | upper : 3 : '$' }}</p>
 <h4>Total Leads - {{totalleads}}</h4>
 <p>Status : {{route.snapshot.paramMap.get('status')}}</p>
 
@@ -72,4 +72,5 @@
 <ng-template  let-data let-fav="color"  #dynamo>
     <h1>Hi Am {{data}} , I like {{fav}} color</h1>
 </ng-template>
+
 

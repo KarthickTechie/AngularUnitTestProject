@@ -32,6 +32,13 @@ export class PostService {
   //     .pipe(catchError(this.errorHandler));
   // }
 
+  getProducts(){
+        return this.http
+      .get(`https://dummyjson.com/products`)
+      .pipe(catchError(this.errorHandler));
+
+  }
+
   errorHandler(error: Response) {
     return throwError(error);
   }
