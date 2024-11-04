@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PostService } from '../../services/posts/post.service';
-import { NgFor, NgIf } from '@angular/common';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-reports',
   standalone: true,
-  imports: [NgIf,NgFor],
+  imports: [NgIf,NgFor,CommonModule],
   templateUrl: './reports.component.html',
   styleUrl: './reports.component.scss'
 })

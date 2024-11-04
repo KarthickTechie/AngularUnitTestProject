@@ -32,7 +32,8 @@
                 <ng-container *ngFor="let h of finalKeys">
                     <td>
                         <img *ngIf="h == 'thumbnail'" width="75px" height="75px" [src]="p[h]" alt="">
-                        <span *ngIf="h != 'thumbnail'">{{p[h]}}</span>
+                        <span *ngIf="h != 'thumbnail' && h != 'price'">{{p[h]}}</span>
+                        <span *ngIf="h == 'price'"> {{p['price'] | currency }} </span>
                     </td>
                 </ng-container>
             </tr>
