@@ -1,5 +1,7 @@
 
-## signals branch 
+## observables branch 
 
-branch created for pratice signal 
+branch created for pratice Rxjs.Observables
+
+
 
