@@ -5,34 +5,34 @@ import { HttpClient } from "@angular/common/http";
 import { catchError, throwError } from "rxjs";
 
 @Injectable({
-  providedIn: "root",
+	providedIn: "root",
 })
 export class PostService {
-  // URL = environment.APIURL;
+	// URL = environment.APIURL;
 
-  constructor(private http: HttpClient) {}
+	constructor(private http: HttpClient) {}
 
-  getPosts() {
-    return this.http.get<Post[]>("https://jsonplaceholder.typicode.com/posts");
-  }
+	getPosts() {
+		return this.http.get<Post[]>("https://jsonplaceholder.typicode.com/posts");
+	}
 
-  deletePost(post: Post) {
-    return this.http.delete(
-      `https://jsonplaceholder.typicode.com/post/${post.id}`
-    );
-  }
+	deletePost(post: Post) {
+		return this.http.delete(
+			`https://jsonplaceholder.typicode.com/post/${post.id}`
+		);
+	}
 
-  getDataFromLocal(fileName: string) {
-    return this.http.get(`../assets/${fileName}.json`);
-  }
+	getDataFromLocal(fileName: string) {
+		return this.http.get(`../assets/${fileName}.json`);
+	}
 
-  // getPostData(method: string, data?: any) {
-  //   return this.http
-  //     .post(`${this.URL}/${method}`, data)
-  //     .pipe(catchError(this.errorHandler));
-  // }
+	// getPostData(method: string, data?: any) {
+	//   return this.http
+	//     .post(`${this.URL}/${method}`, data)
+	//     .pipe(catchError(this.errorHandler));
+	// }
 
-  errorHandler(error: Response) {
-    return throwError(error);
-  }
+	errorHandler(error: Response) {
+		return throwError(error);
+	}
 }

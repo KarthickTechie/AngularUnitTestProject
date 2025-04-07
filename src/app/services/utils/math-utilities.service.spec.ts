@@ -5,14 +5,18 @@ import { LoggerService } from "../logger/logger.service";
 
 fdescribe("MathUtilitiesService", () => {
 	let service: MathUtilitiesService;
-	let mockLoggerService: any;
+	let mockLoggerService: jasmine.SpyObj<LoggerService>;
 	beforeEach(() => {
-		mockLoggerService = jasmine.createSpyObj("LoggerService", ["log"]);
+		/*  */
+		const spyLoggerService = jasmine.createSpyObj("LoggerService", ["log"]);
 
 		TestBed.configureTestingModule({
-			providers: [{ provide: LoggerService, useValue: mockLoggerService }],
+			providers: [{ provide: LoggerService, useValue: spyLoggerService }],
 		});
 		service = TestBed.inject(MathUtilitiesService);
+		mockLoggerService = TestBed.inject(
+			LoggerService
+		) as jasmine.SpyObj<LoggerService>;
 	});
 
 	it("should be created", () => {
