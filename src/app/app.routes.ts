@@ -12,48 +12,48 @@ import { TasksComponent } from "./components/tasks/tasks.component";
 import { DashboardLendComponent } from "./components/dashboard-lend/dashboard-lend.component";
 
 export const routes: Routes = [
-  { path: "tasks", component: TasksComponent },
-  { path: "login", component: LoginComponent },
-  { path: "signup", component: SignupComponent },
-  {
-    path: "home",
-    component: HomeComponent,
-    children: [
-      {
-        path: "dashboard-lend",
-        component: DashboardLendComponent,
-      },
-      {
-        path: "dashboard",
-        component: DashboardComponent,
-      },
-      {
-        path: "reports",
-        component: ReportsComponent,
-      },
-      {
-        path: "",
-        pathMatch: "full",
-        redirectTo: "dashboard-lend",
-      },
-    ],
-  },
-  {
-    path: "leadinbox/:id",
-    component: LeaddetailComponent,
-  },
-  {
-    path: "leadinbox",
-    component: LeadinboxComponent,
-    canActivate: [authGuard],
-  },
-  {
-    path: "",
-    pathMatch: "full",
-    redirectTo: "home",
-  },
-  {
-    path: "**",
-    component: PagenotfoundComponent,
-  },
+	{ path: "tasks", component: TasksComponent },
+	{ path: "login", component: LoginComponent },
+	{ path: "signup", component: SignupComponent },
+	{
+		path: "home",
+		component: HomeComponent,
+		children: [
+			{
+				path: "dashboard-lend",
+				component: DashboardLendComponent,
+			},
+			{
+				path: "dashboard",
+				component: DashboardComponent,
+			},
+			{
+				path: "reports",
+				component: ReportsComponent,
+			},
+			{
+				path: "",
+				pathMatch: "full",
+				redirectTo: "reports",
+			},
+		],
+	},
+	{
+		path: "leadinbox/:id",
+		component: LeaddetailComponent,
+	},
+	{
+		path: "leadinbox",
+		component: LeadinboxComponent,
+		canActivate: [authGuard],
+	},
+	{
+		path: "",
+		pathMatch: "full",
+		redirectTo: "home",
+	},
+	{
+		path: "**",
+		component: PagenotfoundComponent,
+	},
 ];
