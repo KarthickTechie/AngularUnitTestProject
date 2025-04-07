@@ -23,3 +23,18 @@ fdescribe('PostdetailComponent', () => {
     component.delete(POST)
   });
 });
+
+/*
+
+const httpErrorResp = new HttpErrorResponse({
+  error:'test 404 error',
+  status:404,
+  statusText:'Not Found'
+})
+
+httpClientSpy.get.and.returnValue(asyncError(httpErrorResp))
+httpService.getHeros().subscribe(data=>{
+  
+})
+
+*/

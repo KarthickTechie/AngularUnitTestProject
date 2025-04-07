@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+@import "@ionic/angular/css/core.css";
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  --purple-color: #622248;
+  --card-border-width: 8px;
+}
+
+body {
+  font-family: "Roboto";
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.active {
+  font-size: large;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.flex-container, .flex-y, .flex-x {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-x {
+  flex-flow: row nowrap;
+}
+
+.flex-y {
+  flex-flow: column nowrap;
+}
+
+.error-style {
+  color: red;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 50px;
+  text-align: center;
+}
+
+.card-border-left {
+  border-left-color: var(--purple-color);
+  border-left-width: var(--card-border-width);
+  border-left-style: solid;
+}
+
+.card-border-bottom {
+  border-bottom-color: var(--purple-color);
+  border-bottom-width: var(--card-border-width);
+  border-bottom-style: solid;
+}/*# sourceMappingURL=styles.css.map */
