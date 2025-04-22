@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { Observable, catchError, empty, merge, of, throwError } from "rxjs";
 import { MathUtilitiesService } from "../../services/utils/math-utilities.service";
 import { testDataAadhaar } from "../../Utils/Colors";
+import { regex_nonword } from "../../Utils/Constants";
 
 @Component({
 	selector: "app-reports",
@@ -42,8 +43,8 @@ export class ReportsComponent {
 		const formattedData = testDataAadhaar
 			.split("\n")
 			.map((d) => d.replace("\t", ""));
-		const regex_nonword = /^[\d\s]+$/;
-		const aadhaar_number_regex = /^\d{4}\s\d{4}\s\d{4}\s+$/;
 		const onlyNumbers = formattedData.filter((val) => regex_nonword.test(val));
+
+		// parse data from ocr and check if it has a valid aadhaar no
 	}
 }
