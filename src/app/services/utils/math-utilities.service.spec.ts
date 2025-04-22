@@ -37,3 +37,6 @@ fdescribe("MathUtilitiesService", () => {
 		expect(mockLoggerService.log).toHaveBeenCalledTimes(1);
 	});
 });
+
+// size -> 10 return 10 digit numbet
+// size -> undefined return 0 digit number

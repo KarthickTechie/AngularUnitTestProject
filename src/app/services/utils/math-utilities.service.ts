@@ -25,7 +25,7 @@ export class MathUtilitiesService {
 			for (let i = 0; i < 10; i++) {
 				rn += `${Math.round(Math.random() * 10)}`;
 			}
-			this.logger.log(rn);
+			this.logger.log(rn); // log all request and some times type error refernce
 			return parseInt(rn);
 		} else {
 			this.logger.log(rn);
